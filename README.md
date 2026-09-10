@@ -200,6 +200,7 @@ bash
 git clone https://github.com/AlastairZeved/With-Love-Math.git
 
 This creates a With-Love-Math folder wherever you ran the command. You can put it anywhere — the install step below points to it.
+
 Step 2 — Choose how to install
 Option A — Try it for one session (no install)
 
@@ -209,6 +210,7 @@ bash
 claude --plugin-dir ./With-Love-Math
 
 Nothing is written to your system. The plugin loads for this session only. Close Claude Code and it's gone. This is the fastest way to test that it works before committing to an install.
+
 Option B — Install it for yourself (persists across sessions)
 
 Copy the plugin folder into your personal skills directory:
@@ -217,9 +219,6 @@ bash
 cp -r ./With-Love-Math ~/.claude/skills/with-love-math
 
 Claude Code auto-discovers anything under ~/.claude/skills/, so the plugin loads on the next session with no further install step. It will appear as with-love-math@skills-dir.
-
-Manage it:
-bash
 
 # Disable
 claude plugin disable with-love-math@skills-dir

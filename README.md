@@ -1,141 +1,127 @@
-# With-Love-Math
-With Love, Math is a decisioning framework packaged as a Claude Code plugin. It runs any decision through four recursive principles (R1–R4), a WHY/WHO/FEEL/EVOKE loop, a ten-position map, and a single emotional invariant — WONDER — and returns a binary verdict naming any failing principle.
+# With Love, Math _(With-Love-Math)_
 
-With Love, Math — what it is, how it runs, why you'd use it
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](.claude-plugin/plugin.json)
+[![Standard Readme](https://img.shields.io/badge/standard--readme-follower-brightgreen.svg)](https://github.com/richardlitt/standard-readme)
 
-This is the third pillar in the same body of work as Gregorian Mode and Editorial Loop. Where Gregorian Mode interrogates design choices and Editorial Loop interrogates text, this plugin interrogates decisions — any decision, project, or creative challenge. It is the broadest of the three, and in some ways the most personal.
+A decisioning framework packaged as a Claude Code plugin — four principles, a ten-position map, one invariant: WONDER.
 
-The name in the subagent gives it away: gregorian-decision. The author is reusing the term from Gregorian Mode, where "Gregorian" was defined as "a standard strangers adopt and never stop running." Here that standard is a four-principle decisioning framework whose single invariant is WONDER.
+With Love, Math runs any decision, project, or creative challenge through four recursive principles (R1–R4), a WHY/WHO/FEEL/EVOKE loop, a ten-position map, and a single emotional invariant — WONDER — then returns a binary verdict naming any failing principle. It is not a cover generator, not a website builder, and not a chat partner for endless deliberation: it is a discipline for running a decision and getting a verdict.
 
-# 1. What it's for
+The name carries a comma the repository does not — the repo is `With-Love-Math`, the framework is *With Love, Math* (the sign-off, the breath, the point). This is the third pillar in the same body of work as Gregorian Mode and Editorial Loop. Where Gregorian Mode interrogates design choices and Editorial Loop interrogates text, this plugin interrogates decisions — any decision. It is the broadest of the three, and in some ways the most personal.
 
-It is not a cover generator, a website builder, or a design system. It is a decisioning framework — a lens you run things through. The plugin is the framework, encoded as commands, skills, and subagents. As CLAUDE.md states it directly:
+The plugin *is* the framework. It applies its own principles to itself: R1 by always returning to Why, R2 by checking every decision against the invariant, R3 by keeping each principle distinct yet unified, R4 by working at any scale — one decision or a whole project.
 
-    A decisioning framework — not a cover generator, not a website builder. It runs any problem, project, or creative challenge through four recursive principles, maps it onto the ten-position map, and checks it against a single emotional invariant: WONDER. Every decision, design, and project must evoke it.
+## Table of Contents
 
-The plugin applies its own framework to itself. R1 by always returning to Why. R2 by checking every decision against the invariant. R3 by keeping each principle distinct yet unified. R4 by working at any scale — one decision or a whole project.
+- [Background](#background)
+- [Install](#install)
+  - [Dependencies](#dependencies)
+  - [Try it for one session](#try-it-for-one-session)
+  - [Install it permanently](#install-it-permanently)
+- [Usage](#usage)
+  - [Commands](#commands)
+  - [Example](#example)
+  - [Output format](#output-format)
+- [The Framework](#the-framework)
+  - [The four principles (R1–R4)](#the-four-principles-r1r4)
+  - [The decisioning loop](#the-decisioning-loop)
+  - [The ten-position map](#the-ten-position-map)
+  - [The four layers](#the-four-layers)
+  - [The invariant: WONDER](#the-invariant-wonder)
+- [Architecture](#architecture)
+  - [Commands — the public entry points](#commands--the-public-entry-points)
+  - [Skills — the operative content](#skills--the-operative-content)
+  - [Subagents — the specialists](#subagents--the-specialists)
+  - [Hooks — the ambient reminders](#hooks--the-ambient-reminders)
+  - [Canon and synchronization](#canon-and-synchronization)
+- [Maintainers](#maintainers)
+- [Contributing](#contributing)
+- [License](#license)
 
-Its job: stop decisions from drifting. Most work starts with a reason and a feeling, and then loses both as it accumulates iterations, constraints, and other people's opinions. This framework is a discipline for not losing them.
+## Background
 
-# 2. The framework content
-The four principles
-Principle	Question	What it enforces
-R1 · Recursive Grounding	"Why am I doing this?"	Every decision traces back to its origin. The elastic that snaps the loop to its start.
-R2 · Emotion as Invariant	"What feeling must I preserve?"	A chosen feeling survives every iteration unchanged.
-R3 · Distinction Within Unity	"How do these parts make one whole?"	Parts stay individually legible while cohering. "Distinct colors, one shape."
-R4 · Scale the Invariance	"Does this work at every size?"	Integrity holds from 2-inch icon to 10-foot mural.
-The loop
+Most work starts with a reason and a feeling, and then loses both. Iterations accumulate, constraints arrive, other people's opinions land on top, and by the end the decision no longer resembles the one you set out to make. With Love, Math is a framework for not losing them: R1 traces every choice back to its origin; R2 names the feeling before you start and holds it constant through every change.
 
-WHY → WHO → FEEL → EVOKE → return to WHY.
+"Gregorian" is the term the author reuses from Gregorian Mode, where it was defined as *a standard strangers adopt and never stop running* — hence `gregorian-decision`, the name of the full-framework subagent. Here the standard is a four-principle decisioning framework whose single invariant is WONDER. The framework is meant to be passed on, not just used privately: the `/teach` command and `tutor` skill exist precisely so others can adopt and run it.
 
-    WHY — the reason this exists
+Every element of the framework reads at four depths simultaneously — Design Philosophy (physical), Self-Help / Self-Love (emotional), Math in Nature (structural), Esotericism (spiritual). A good decision holds at all four. This is the framework's most unusual claim: a layout decision, a life decision, a structural pattern, and a spiritual question are the same object viewed from different altitudes.
 
-    WHO — who it is for, who receives it
+Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — warm enough to invite, strange enough to be memorable, confident enough to commit, refined enough to trust.
 
-    FEEL — the feeling that must be preserved
+## Install
 
-    EVOKE — how that feeling is produced
+With Love, Math is a Claude Code plugin. Install it once and the commands, skills, subagents, and hooks load automatically at the start of every session.
 
-The loop is infinite. It always returns to the beginning. This is R1 in motion — no decision is ever fully grounded; it is re-grounded each time you run the loop.
-The ten-position map
+### Dependencies
 
-A second lens on the same structure. The loop is the sequence you run; the map is the shape it makes.
-Position	Element
-1	State the Goal (< 5 words)
-2	WHY
-3	WHO
-4	FEEL
-5	EVOKE
-6	R1 · Recursive Grounding
-7	R2 · Emotion as Invariant
-8	R3 · Distinction Within Unity
-9	R4 · Scale the Invariance
-10	Find the Math
+- [Claude Code](https://code.claude.com/docs), installed and working — `claude --version` should return a version
+- Git, to clone the repository
 
-Position 10 — "Find the Math" — is the terminal move: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding.
-The four layers
+### Try it for one session
 
-Every element can be read at four depths simultaneously:
+Clone the repo, then point Claude Code at it:
 
-    Design Philosophy — physical, practical
+```bash
+git clone https://github.com/AlastairZeved/With-Love-Math.git
+cd With-Love-Math
+claude --plugin-dir .
+```
 
-    Self-Help / Self-Love — emotional, psychological
+Nothing is written to your system; the plugin loads for this session only. This is the fastest way to confirm it works before committing to an install. Run `/reload-plugins` to pick up local edits to the plugin without restarting.
 
-    Math in Nature — intellectual, structural
+### Install it permanently
 
-    Esotericism — spiritual, transcendent
+Copy the plugin folder into your personal skills directory:
 
-A good decision holds at all four. This is the most unusual part of the framework: it claims that a layout decision, a life decision, a structural pattern, and a spiritual question are the same object viewed from different altitudes.
-The invariant
+```bash
+cp -r ./With-Love-Math ~/.claude/skills/with-love-math
+```
 
-WONDER. If a decision, design, or project does not evoke wonder, it has not passed. This is what R2 preserves and R4 scales. It is the single test the whole framework resolves to.
-Brand personality
+Claude Code auto-discovers plugins in `~/.claude/skills/` that carry a `.claude-plugin/plugin.json` manifest — this repo has one — so it loads on the next session with no further install step, appearing as `with-love-math@skills-dir`.
 
-Friendly · Quirky · Bold · Sophisticated. Warm enough to invite, strange enough to be memorable, confident enough to commit, refined enough to trust.
+Manage it afterward with:
 
-# 3. How it works mechanically
+```bash
+# Disable
+claude plugin disable with-love-math@skills-dir
 
-The plugin has four layers, and each does a distinct job.
-Commands — the public entry points
+# Re-enable
+claude plugin enable with-love-math@skills-dir
 
-Five commands, stable and minimal. Each takes the user's argument and dispatches to a skill or subagent.
-Command	Does
-/decide	Run a decision through the full framework → Aligned / Needs Revision verdict
-/diagnose	Audit an existing project against R1–R4 → prescription with first step
-/map	Map a project onto the ten-position map → filled table plus gaps
-/teach	Teach the framework, adapted to the learner
-/lexicon	Define the framework's terms
+# Uninstall (removes the folder)
+rm -rf ~/.claude/skills/with-love-math
+```
 
-Commands are thin. They contain the argument hint, a one-line description, and instructions to dispatch to a skill or agent. Depth lives below them.
-Skills — the operative content
+## Usage
 
-Four skills: decision-engine, diagnostic, lexicon, tutor.
+Once the plugin is loaded, the session-start hook greets you and lists the commands. Five commands, stable and minimal; each dispatches to a skill or subagent beneath it.
 
-Here is the key mechanical detail, and it is a sophisticated piece of plugin authoring. The CLAUDE.md at the plugin root is not auto-loaded into the host agent's context — the file says so explicitly:
+### Commands
 
-    A CLAUDE.md at a plugin root is not auto-loaded into the host agent's context. This file is the human-readable single source of truth for the framework. The operative content is carried into context by the skills in skills/ (each restates only the compact canon it needs). Edit the canon here first, then reconcile the skills against it.
+| Command       | Does                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| `/decide`     | Run a decision through the full framework → `Aligned` / `Needs Revision` verdict |
+| `/diagnose`   | Audit an existing project against R1–R4 → prescription with first step |
+| `/map`        | Map a project onto the ten-position map → filled table plus gaps  |
+| `/teach`      | Teach the framework, adapted to the learner                       |
+| `/lexicon`    | Define the framework's terms                                      |
 
-So the author maintains a single source of truth (CLAUDE.md) and then duplicates the compact canon into each skill that needs it. This is a deliberate synchronization burden accepted in exchange for skills that work standalone. The instruction "Edit the canon here first, then reconcile the skills against it" tells you the author knows this is a maintenance cost and has a process for it.
+### Example
 
-Each skill restates only the canon it needs. The decision-engine skill carries the four principles, the loop, and the output format. The tutor skill carries the same canon plus a teaching structure and adaptation rules. The lexicon skill carries the canon plus the full glossary. Every skill carries the invariant.
-Agents — the specialists
+```text
+/decide Ship the dashboard with the dark header instead of the light one
+/diagnose the landing page from last quarter — it feels cold
+/map the mobile app redesign
+/teach a designer who has never used a decisioning framework
+/lexicon emotional invariant
+```
 
-Three subagents, all model: sonnet, all with disallowedTools: Write, Edit — they evaluate, they do not modify.
+### Output format
 
-    gregorian-decision — the full framework run. Medium effort, 15 turns. States the goal, runs the loop, checks R1–R4 each as Pass/Weak/Fail with one line of evidence, finds the math, issues the verdict. Its closing instruction: "Never soften a Fail to reach Aligned."
+The decision engine returns a structured verdict, in this fixed format:
 
-    invariant-checker — the fast narrow pass. Low effort, 8 turns. Identifies the invariant, checks evidence for and against, analyzes where it leaks, returns Preserved/Lost. "This is a scalpel, not the whole operation."
-
-    ten-position-mapper — maps a project onto all ten positions, checks that they connect, surfaces gaps. Medium effort, 12 turns.
-
-The division of labor is clean. gregorian-decision is the full operation. invariant-checker is the quick check. ten-position-mapper does structural cartography.
-Hooks — the ambient reminders
-
-Two hooks, both non-blocking, both narrow.
-
-SessionStart runs welcome.sh, which prints:
-text
-
-✨ With Love, Math — the framework is loaded.
-Commands:
-  /decide   <choice>    Run a decision through R1–R4 + the WONDER check
-  /diagnose <project>   Audit a project and prescribe the first fix
-  /map      <project>   Map it onto the ten-position map
-  /teach    [audience]  Learn or teach the framework
-  /lexicon  [term]      Define the framework's language
-Invariant: WONDER. If it doesn't evoke wonder, it hasn't passed.
-
-PreToolUse on Write|Edit runs design-reminder.sh, which greps the tool input for .design.md. If found, it prints:
-text
-
-🌿 Editing a design file — check the emotional invariant (R2): does this still evoke WONDER, and does it hold at every scale (R4)?
-
-This is a well-scoped hook. It fires only when a file matching *.design.md is being written or edited, so it does not nag on ordinary edits. And it exits 0 — non-blocking. It reminds, it does not gate.
-The output format
-
-The decision-engine skill defines a strict output format:
-text
-
+```text
 DECISION: <restated in one line>
 GOAL: <under five words>
 
@@ -155,76 +141,122 @@ MATH: <the pattern found>
 
 VERDICT: Aligned  |  Needs Revision
   <if Needs Revision: name the failing principle(s) and the single first move>
+```
 
-The verdict is binary at the top level. Failures are named by principle. And the instruction is explicit: "never soften a Fail into a Weak to reach Aligned."
+The verdict is binary at the top level; failures are named by principle, and the framework never softens a Fail into a Weak to reach Aligned. If you want a verdict instead of a discussion, this is the point.
 
-# 4. Why someone would use it
-To keep a decision from drifting
+## The Framework
 
-The framework's premise is that decisions start with a reason and a feeling, and then lose both. R1 traces back to the reason. R2 names the feeling and holds it constant. Running the loop is a way to re-ground a decision that has wandered.
-To get a verdict instead of a discussion
+The framework is the content; the plugin is its encoding. It has five components — four principles, one loop, one map, four layers, one invariant.
 
-Most AI assistants will discuss a decision with you indefinitely. This one runs a process and returns Aligned or Needs Revision, with the failing principle named. That is a different product. It is for someone who wants to be told, not to be agreed with.
-To check a project at every scale
+### The four principles (R1–R4)
 
-R4 is a stress test most design processes skip. A logo, an icon, a billboard, and a mural are the same decision at different zoom levels. The framework forces you to ask whether the integrity survives the scaling. This is useful for anyone shipping work that will be seen at multiple sizes — brand systems, type, illustration, product UI.
-To hold an emotional invariant across iterations
+| Principle                     | Question                             | What it enforces                                    |
+| ----------------------------- | ------------------------------------ | --------------------------------------------------- |
+| **R1 · Recursive Grounding**  | "Why am I doing this?"               | Every decision traces back to its origin.           |
+| **R2 · Emotion as Invariant** | "What feeling must I preserve?"      | A chosen feeling survives every iteration unchanged.|
+| **R3 · Distinction Within Unity** | "How do these parts make one whole?" | Parts stay individually legible while cohering — "distinct colors, one shape." |
+| **R4 · Scale the Invariance** | "Does this work at every size?"      | Integrity holds from 2-inch icon to 10-foot mural.  |
 
-R2 is the discipline of naming a feeling before you start and checking it after every change. This is hard to do without a framework because the feeling is invisible once you are deep in execution. The plugin makes it a named, checkable thing — and the invariant-checker subagent exists specifically to verify it quickly.
-To teach the framework
+### The decisioning loop
 
-The tutor skill exists because this framework is meant to be passed on. It has adaptation rules for beginners, practitioners, and teachers-in-training. The teaching structure moves from Why → four principles → loop → optional map → one real practice decision. This is a framework designed to be adopted by others, not just used privately. That is exactly what "Gregorian" meant in the other plugin.
-To get a structural read of a project
+```
+WHY → WHO → FEEL → EVOKE → (return to WHY)
+```
 
-/map fills all ten positions from a project description and shows which positions are empty, thin, or overloaded. This is a fast way to see whether a project has a stated goal, a clear why, a defined audience, a named feeling, and an underlying pattern — or whether some of those are missing.
-To find the math
+- **WHY** — the reason this exists
+- **WHO** — who it is for, who receives it
+- **FEEL** — the feeling that must be preserved
+- **EVOKE** — how that feeling is produced
 
-Position 10 — "Find the Math" — is the move most decision frameworks do not have. It asks you to name the pattern, ratio, symmetry, or structure underneath the decision. This is not decoration. It is the claim that good decisions have an underlying form, and that naming it makes the decision more legible and more transferable.
+The loop is infinite; it always returns to the beginning. This is R1 in motion — no decision is ever fully grounded, only re-grounded each time you run the loop.
 
-# In One Paragraph
+### The ten-position map
 
-With Love, Math is a decisioning framework packaged as a Claude Code plugin. It runs any decision through four recursive principles (R1–R4), a WHY/WHO/FEEL/EVOKE loop, a ten-position map, and a single emotional invariant — WONDER — and returns a binary verdict naming any failing principle. It is invoked through five commands, executed by four skills and three read-only subagents, and supported by two non-blocking hooks that greet you and remind you to check the invariant when editing design files. You would use it to keep a decision from drifting from its reason and its feeling, to get a verdict rather than a discussion, to stress-test work at every scale, and to have a framework you can teach to others.
+A second lens on the same structure. The loop is the sequence you run; the map is the shape it makes.
 
-# Install
+| Position | Element                |
+| -------- | ---------------------- |
+| 1        | State the Goal (< 5 words) |
+| 2        | WHY                    |
+| 3        | WHO                    |
+| 4        | FEEL                   |
+| 5        | EVOKE                  |
+| 6        | R1 · Recursive Grounding |
+| 7        | R2 · Emotion as Invariant |
+| 8        | R3 · Distinction Within Unity |
+| 9        | R4 · Scale the Invariance |
+| 10       | Find the Math          |
 
-With Love, Math is a Claude Code plugin. Install it once and the commands, skills, subagents, and hooks load automatically at the start of every session.
-Prerequisites
+Position 10 — **Find the Math** — is the terminal move: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. This is the move most decision frameworks do not have; it is the claim that good decisions have an underlying form, and that naming it makes a decision more legible and more transferable.
 
-    Claude Code installed and working (claude --version should return a version).
+### The four layers
 
-    Git installed.
+1. **Design Philosophy** — physical, practical
+2. **Self-Help / Self-Love** — emotional, psychological
+3. **Math in Nature** — intellectual, structural
+4. **Esotericism** — spiritual, transcendent
 
-Step 1 — Clone the repo
-bash
+Any element can be read at any layer; a good decision holds at all four. (See [Background](#background).)
 
-git clone https://github.com/AlastairZeved/With-Love-Math.git
+### The invariant: WONDER
 
-This creates a With-Love-Math folder wherever you ran the command. You can put it anywhere — the install step below points to it.
+**WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what R2 preserves and R4 scales — the single test the whole framework resolves to.
 
-Step 2 — Choose how to install
-Option A — Try it for one session (no install)
+## Architecture
 
-Run Claude Code with the plugin pointed at the cloned folder:
-bash
+The plugin has four layers, and each does a distinct job. This is also a Claude Code plugin-authoring reference: it is a complete worked example of commands, skills, subagents, and hooks cooperating in one package.
 
-claude --plugin-dir ./With-Love-Math
+### Commands — the public entry points
 
-Nothing is written to your system. The plugin loads for this session only. Close Claude Code and it's gone. This is the fastest way to test that it works before committing to an install.
+Five flat command files in [`commands/`](commands) — `decide.md`, `diagnose.md`, `map.md`, `teach.md`, `lexicon.md`. Commands are thin: an argument hint, a one-line description, and dispatch instructions. Depth lives below them.
 
-Option B — Install it for yourself (persists across sessions)
+### Skills — the operative content
 
-Copy the plugin folder into your personal skills directory:
-bash
+Four skills in [`skills/`](skills), each a `SKILL.md` carrying the compact canon it needs:
 
-cp -r ./With-Love-Math ~/.claude/skills/with-love-math
+| Skill              | Carries                                                              |
+| ------------------ | -------------------------------------------------------------------- |
+| `decision-engine`  | Principles, loop, and the structured output format (backs `/decide`)  |
+| `diagnostic`       | The audit process: where an existing work loses the invariant (backs `/diagnose`) |
+| `tutor`            | The canon plus a teaching structure and level-adaptation rules (backs `/teach`) |
+| `lexicon`          | The canon plus the full glossary (backs `/lexicon`)                   |
 
-Claude Code auto-discovers anything under ~/.claude/skills/, so the plugin loads on the next session with no further install step. It will appear as with-love-math@skills-dir.
+Every skill carries the invariant.
 
-# Disable
-claude plugin disable with-love-math@skills-dir
+### Subagents — the specialists
 
-# Re-enable
-claude plugin enable with-love-math@skills-dir
+Three subagents in [`agents/`](agents), all `model: sonnet`, all with `disallowedTools: Write, Edit` — they evaluate, they do not modify.
 
-# Uninstall (removes the folder)
-rm -rf ~/.claude/skills/with-love-math
+| Agent                  | Job                                            | Effort | Turns |
+| ---------------------- | ---------------------------------------------- | ------ | ----- |
+| `gregorian-decision`   | The full framework run → structured verdict    | medium | 15    |
+| `invariant-checker`    | The fast narrow pass → `Preserved` / `Lost`    | low    | 8     |
+| `ten-position-mapper`  | Structural cartography → map plus gaps         | medium | 12    |
+
+The division of labor is clean: `gregorian-decision` is the full operation, `invariant-checker` is the scalpel, `ten-position-mapper` does the cartography.
+
+### Hooks — the ambient reminders
+
+Two hooks in [`hooks/hooks.json`](hooks/hooks.json), both non-blocking:
+
+- **SessionStart** runs [`scripts/welcome.sh`](scripts/welcome.sh), which greets you and lists the commands.
+- **PreToolUse** on `Write|Edit` runs [`scripts/design-reminder.sh`](scripts/design-reminder.sh), which fires only when the file being touched matches `*.design.md` and reminds you to check the invariant (R2) and scale (R4). It exits 0 — it reminds, it does not gate.
+
+### Canon and synchronization
+
+[`CLAUDE.md`](CLAUDE.md) at the plugin root is the human-readable single source of truth for the framework — and, as the file states explicitly, it is *not* auto-loaded into the host agent's context. The operative content is carried into context by the skills, each of which restates only the compact canon it needs. This is a deliberate synchronization burden accepted in exchange for skills that work standalone; the maintenance rule is: **edit the canon in CLAUDE.md first, then reconcile the skills against it.**
+
+## Maintainers
+
+- [@AlastairZeved](https://github.com/AlastairZeved) — author and maintainer.
+
+## Contributing
+
+Questions and framework discussion: [open an issue](https://github.com/AlastairZeved/With-Love-Math/issues). Pull requests are welcome for corrections and reconciliations; proposals that change the framework itself should be opened as issues first, since the framework is the content of the plugin.
+
+The non-negotiable for any PR: **edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.** The skills each carry their own copy of the canon by design; a change that updates one copy but not the others breaks the synchronization rule the plugin runs on. Subagents under [`agents/`](agents) must keep `Write` and `Edit` disallowed — they evaluate, they do not modify.
+
+## License
+
+[MIT](LICENSE) © AlastairZeved

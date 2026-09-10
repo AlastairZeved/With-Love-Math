@@ -184,3 +184,48 @@ Position 10 — "Find the Math" — is the move most decision frameworks do not 
 # In One Paragraph
 
 With Love, Math is a decisioning framework packaged as a Claude Code plugin. It runs any decision through four recursive principles (R1–R4), a WHY/WHO/FEEL/EVOKE loop, a ten-position map, and a single emotional invariant — WONDER — and returns a binary verdict naming any failing principle. It is invoked through five commands, executed by four skills and three read-only subagents, and supported by two non-blocking hooks that greet you and remind you to check the invariant when editing design files. You would use it to keep a decision from drifting from its reason and its feeling, to get a verdict rather than a discussion, to stress-test work at every scale, and to have a framework you can teach to others.
+
+Install
+
+With Love, Math is a Claude Code plugin. Install it once and the commands, skills, subagents, and hooks load automatically at the start of every session.
+Prerequisites
+
+    Claude Code installed and working (claude --version should return a version).
+
+    Git installed.
+
+Step 1 — Clone the repo
+bash
+
+git clone https://github.com/AlastairZeved/With-Love-Math.git
+
+This creates a With-Love-Math folder wherever you ran the command. You can put it anywhere — the install step below points to it.
+Step 2 — Choose how to install
+Option A — Try it for one session (no install)
+
+Run Claude Code with the plugin pointed at the cloned folder:
+bash
+
+claude --plugin-dir ./With-Love-Math
+
+Nothing is written to your system. The plugin loads for this session only. Close Claude Code and it's gone. This is the fastest way to test that it works before committing to an install.
+Option B — Install it for yourself (persists across sessions)
+
+Copy the plugin folder into your personal skills directory:
+bash
+
+cp -r ./With-Love-Math ~/.claude/skills/with-love-math
+
+Claude Code auto-discovers anything under ~/.claude/skills/, so the plugin loads on the next session with no further install step. It will appear as with-love-math@skills-dir.
+
+Manage it:
+bash
+
+# Disable
+claude plugin disable with-love-math@skills-dir
+
+# Re-enable
+claude plugin enable with-love-math@skills-dir
+
+# Uninstall (removes the folder)
+rm -rf ~/.claude/skills/with-love-math

@@ -1,0 +1,10 @@
+{
+  "name": "with-love-math",
+  "version": "1.0.0",
+  "description": "Portable decisioning-framework plugin.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "With Love, Math",
+    "category": "decision-making"
+  }
+}

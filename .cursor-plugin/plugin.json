@@ -1,0 +1,8 @@
+{
+  "name": "with-love-math",
+  "version": "1.0.0",
+  "description": "Portable decisioning-framework plugin.",
+  "skills": "./skills/",
+  "agents": "./com.anthropic.claude/agents/",
+  "commands": "./com.anthropic.claude/commands/"
+}

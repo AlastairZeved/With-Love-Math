@@ -1,10 +1,10 @@
 # With Love, Math _(With-Love-Math)_
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](plugin.json)
 [![Standard Readme](https://img.shields.io/badge/standard--readme-follower-brightgreen.svg)](https://github.com/richardlitt/standard-readme)
 
-A decisioning framework packaged as a Claude Code plugin — four principles, a ten-position map, one invariant: WONDER.
+A decisioning framework packaged as an [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin — four principles, a ten-position map, one invariant: WONDER.
 
 With Love, Math runs any decision, project, or creative challenge through four recursive principles (R1–R4), a WHY/WHO/FEEL/EVOKE loop, a ten-position map, and a single emotional invariant — WONDER — then returns a binary verdict naming any failing principle. It is not a cover generator, not a website builder, and not a chat partner for endless deliberation: it is a discipline for running a decision and getting a verdict.
 
@@ -17,8 +17,8 @@ The plugin *is* the framework. It applies its own principles to itself: R1 by al
 - [Background](#background)
 - [Install](#install)
   - [Dependencies](#dependencies)
-  - [Try it for one session](#try-it-for-one-session)
-  - [Install it permanently](#install-it-permanently)
+  - [The agents at a glance](#the-agents-at-a-glance)
+  - [Per-agent instructions](#per-agent-instructions)
 - [Usage](#usage)
   - [Commands](#commands)
   - [Example](#example)
@@ -30,6 +30,7 @@ The plugin *is* the framework. It applies its own principles to itself: R1 by al
   - [The four layers](#the-four-layers)
   - [The invariant: WONDER](#the-invariant-wonder)
 - [Architecture](#architecture)
+  - [Portability — the packaging split](#portability--the-packaging-split)
   - [Commands — the public entry points](#commands--the-public-entry-points)
   - [Skills — the operative content](#skills--the-operative-content)
   - [Subagents — the specialists](#subagents--the-specialists)
@@ -51,51 +52,137 @@ Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — war
 
 ## Install
 
-With Love, Math is a Claude Code plugin. Install it once and the commands, skills, subagents, and hooks load automatically at the start of every session.
+No build step, no package manager, no runtime dependencies — the plugin is plain markdown that a compatible agent discovers on load. All skills live under `skills/`; the root [`plugin.json`](plugin.json) is an [Agent Plugins 1.0.0](https://agent-plugins.org/specification) manifest, which is the portable source of truth. Claude Code's manifest lives at [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) and points at the Claude-specific components under [`com.anthropic.claude/`](com.anthropic.claude).
 
 ### Dependencies
 
-- [Claude Code](https://code.claude.com/docs), installed and working — `claude --version` should return a version
-- Git, to clone the repository
+None. Markdown only. (Git, to clone the repository.)
 
-### Try it for one session
+### The agents at a glance
 
-Clone the repo, then point Claude Code at it:
+| Agent | Install method | What ships | Verification |
+|---|---|---|---|
+| [**Claude Code**](#claude-code) | `claude --plugin-dir ./With-Love-Math` | All four skills, plus the five commands, three subagents, and both hooks under `com.anthropic.claude/` | `claude plugin validate` passes on this repository as shipped |
+| [**Hermes Agent**](#hermes-agent) | `hermes plugins install … --no-enable` → `enable` → `gateway restart` | The four portable skills, discovered from the manifest | Documented install path; portable skills are the part Hermes discovers |
+| [**Codex**](#codex) | `codex plugin add ./With-Love-Math` (Codex 0.146.0 and newer) | The portable root [`plugin.json`](plugin.json) (recommended) or the [.codex-plugin/plugin.json](.codex-plugin/plugin.json) fallback | Documented: the sanctioned slot per OpenAI's packaging documentation |
+| [**Cursor**](#cursor) | Cursor Settings → Customize → Plugins, importing from the cloned directory | The portable `skills/` directory plus the Claude-namespace `commands/` and `agents/`, via [.cursor-plugin/plugin.json](.cursor-plugin/plugin.json) | Manifest-driven; Cursor reads the namespaces where a Claude-style command or agent is understood |
+| [**GitHub Copilot**](#github-copilot) | VS Code: **Chat: Install Plugin From Source** → repo URL | Portable `skills/` + root `plugin.json` + [`com.github.copilot/`](com.github.copilot) components (three specialist agents, five command wrappers) | Documented VS Code path; the CLI marketplace path would need a `marketplace.json` the repository does not ship |
+| [**Pi Agent**](#pi-agent) | Clone into `~/.pi/agent/` | The four portable skills, auto-discovered | Documented discovery path |
+
+Full instructions, one collapsible block per agent:
+
+<a name="claude-code" id="claude-code"></a>
+<details>
+<summary><strong>Claude Code</strong> · <code>claude --plugin-dir ./With-Love-Math</code></summary>
+
+Requires [Claude Code](https://code.claude.com/docs).
 
 ```bash
 git clone https://github.com/AlastairZeved/With-Love-Math.git
-cd With-Love-Math
-claude --plugin-dir .
+claude --plugin-dir ./With-Love-Math
 ```
 
-Nothing is written to your system; the plugin loads for this session only. This is the fastest way to confirm it works before committing to an install. Run `/reload-plugins` to pick up local edits to the plugin without restarting.
+The `--plugin-dir` flag loads the plugin directly without marketplace installation. There is no `marketplace.json` in this repository, so `/plugin marketplace add AlastairZeved/With-Love-Math` will not work; `--plugin-dir` is the documented direct-load path. The five commands, three subagents, and both hooks live under the `com.anthropic.claude/` client namespace, declared in [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json).
 
-### Install it permanently
-
-Copy the plugin folder into your personal skills directory:
+To install permanently, copy the plugin into your personal skills directory:
 
 ```bash
 cp -r ./With-Love-Math ~/.claude/skills/with-love-math
 ```
 
-Claude Code auto-discovers plugins in `~/.claude/skills/` that carry a `.claude-plugin/plugin.json` manifest — this repo has one — so it loads on the next session with no further install step, appearing as `with-love-math@skills-dir`.
+Claude Code auto-discovers plugins in `~/.claude/skills/` that carry a `.claude-plugin/plugin.json` manifest, so it loads on the next session as `with-love-math@skills-dir`. Manage it afterward with `claude plugin disable with-love-math@skills-dir`, `claude plugin enable with-love-math@skills-dir`, or `rm -rf ~/.claude/skills/with-love-math` to uninstall.
 
-Manage it afterward with:
+</details>
+
+<a name="hermes-agent" id="hermes-agent"></a>
+<details>
+<summary><strong>Hermes Agent</strong> · <code>hermes plugins install … --no-enable</code></summary>
 
 ```bash
-# Disable
-claude plugin disable with-love-math@skills-dir
-
-# Re-enable
-claude plugin enable with-love-math@skills-dir
-
-# Uninstall (removes the folder)
-rm -rf ~/.claude/skills/with-love-math
+hermes plugins install AlastairZeved/With-Love-Math --no-enable
+hermes plugins enable with-love-math
+hermes gateway restart
 ```
+
+Portable Agent Plugins packages install disabled by default; enable explicitly and restart the gateway for the skills to take effect.
+
+</details>
+
+<a name="codex" id="codex"></a>
+<details>
+<summary><strong>Codex</strong> · <code>codex plugin add ./With-Love-Math</code></summary>
+
+Requires OpenAI Codex. Two paths, both shipped:
+
+- **Portable (recommended).** The root [`plugin.json`](plugin.json) declares the Agent Plugins schema, and Codex reads its OpenAI-specific presentation data from `extensions["com.openai"]` (display name "With Love, Math", category "decision-making") — the sanctioned slot per OpenAI's packaging documentation.
+- **Compatibility fallback.** The [.codex-plugin/plugin.json](.codex-plugin/plugin.json) manifest, which OpenAI documents as a supported fallback for existing `.codex-plugin/` packages.
+
+```bash
+git clone https://github.com/AlastairZeved/With-Love-Math.git
+codex plugin add ./With-Love-Math
+```
+
+`plugin add` is the Codex CLI subcommand for local directories (Codex 0.146.0 and newer use `plugin add`, not `plugin install`). The three subagents stay in the Claude namespace — Codex subagents use TOML definitions, which this repo does not ship.
+
+</details>
+
+<a name="cursor" id="cursor"></a>
+<details>
+<summary><strong>Cursor</strong> · Settings → Customize → Plugins</summary>
+
+Requires Cursor. The repository ships a [.cursor-plugin/plugin.json](.cursor-plugin/plugin.json) manifest pointing Cursor at the portable `skills/` directory and at the Claude-namespace `commands/` and `agents/`.
+
+```bash
+git clone https://github.com/AlastairZeved/With-Love-Math.git
+```
+
+Install from the repo: **Cursor Settings → Customize → Plugins** (or the Customize page), using an import from the cloned directory. The manifest's `agents` and `commands` paths reference the `com.anthropic.claude/` client namespace; Cursor reads them where a Claude-style command or agent is understood.
+
+</details>
+
+<a name="github-copilot" id="github-copilot"></a>
+<details>
+<summary><strong>GitHub Copilot</strong> · VS Code "Install Plugin From Source"</summary>
+
+Requires Copilot in VS Code, the Copilot CLI, or the app. Copilot supports Agent Plugins 1.0.0: it reads the portable `skills/` directory and the root `plugin.json`, then reads Copilot-specific components from the [`com.github.copilot/`](com.github.copilot) client namespace. This repository ships components in that namespace — the three specialists as `.agent.md` custom agents and the five command procedures as `.command.md` wrappers — so Copilot users get the full plugin, not only the portable skills.
+
+```bash
+# VS Code: Chat: Install Plugin From Source (Command Palette), then enter the repo URL
+https://github.com/AlastairZeved/With-Love-Math
+```
+
+In the Copilot CLI, installing from a marketplace requires a `marketplace.json` the repository does not ship; without one, the VS Code "Install Plugin From Source" path above is the install to use. Support for agent plugins can be toggled with the `chat.plugins.enabled` VS Code setting. Skills appear in the **Configure Skills** menu; the specialist agents appear alongside custom agents.
+
+</details>
+
+<a name="pi-agent" id="pi-agent"></a>
+<details>
+<summary><strong>Pi Agent</strong> · clone into <code>~/.pi/agent/</code></summary>
+
+Pi Agent discovers skills in its config directory. Clone the repository there; the portable `skills/` directory is found automatically — no manifest needed.
+
+```bash
+git clone https://github.com/AlastairZeved/With-Love-Math.git ~/.pi/agent/
+```
+
+</details>
+
+<details>
+<summary><strong>Any other SKILL.md-compatible agent</strong> · copy a skill folder</summary>
+
+Copy any folder under `skills/` into the agent's skills directory. Each skill is a self-contained `SKILL.md` with YAML frontmatter (`name`, `description`); nothing else is required.
+
+```bash
+git clone https://github.com/AlastairZeved/With-Love-Math.git
+mkdir -p ~/.your-agent/skills
+cp -r With-Love-Math/skills/* ~/.your-agent/skills/
+```
+
+</details>
 
 ## Usage
 
-Once the plugin is loaded, the session-start hook greets you and lists the commands. Five commands, stable and minimal; each dispatches to a skill or subagent beneath it.
+Once the plugin is loaded, the session-start hook greets you and lists the commands. Five commands, stable and minimal; each dispatches to a skill or subagent beneath it. In agents that do not register slash commands, invoke the same procedures in words — "Run the decision engine on `<decision>`" reaches the identical skill.
 
 ### Commands
 
@@ -205,11 +292,20 @@ Any element can be read at any layer; a good decision holds at all four. (See [B
 
 ## Architecture
 
-The plugin has four layers, and each does a distinct job. This is also a Claude Code plugin-authoring reference: it is a complete worked example of commands, skills, subagents, and hooks cooperating in one package.
+The plugin has four layers, and each does a distinct job — plus a packaging split that keeps it portable. This is also a plugin-authoring reference: it is a complete worked example of an Agent Plugins 1.0.0 package with a Claude Code client namespace cooperating in one repository.
+
+### Portability — the packaging split
+
+Two kinds of content live side by side, per the Agent Plugins 1.0.0 standard (§8, client extensions):
+
+- **Portable** — [`skills/`](skills) and the root [`plugin.json`](plugin.json). Every Agent Plugins 1.0.0 client reads these; they reference nothing client-specific.
+- **Client-namespaced** — [`com.anthropic.claude/`](com.anthropic.claude) (commands, subagents, hooks, hook scripts) and [`com.github.copilot/`](com.github.copilot) (the same components in Copilot's documented formats, with a [porting note](com.github.copilot/README.md)). Clients that don't implement a namespace ignore it, which is what keeps the package portable. Claude Code's manifest at [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) declares the namespace paths for its commands, agents, and hooks.
+
+Per-agent adapters live in [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) (Codex compatibility fallback) and [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (Cursor).
 
 ### Commands — the public entry points
 
-Five flat command files in [`commands/`](commands) — `decide.md`, `diagnose.md`, `map.md`, `teach.md`, `lexicon.md`. Commands are thin: an argument hint, a one-line description, and dispatch instructions. Depth lives below them.
+Five flat command files in [`com.anthropic.claude/commands/`](com.anthropic.claude/commands) — `decide.md`, `diagnose.md`, `map.md`, `teach.md`, `lexicon.md`. Commands are thin: an argument hint, a one-line description, and dispatch instructions. Depth lives below them. Copilot users get the same five doors as `.command.md` wrappers under [`com.github.copilot/commands/`](com.github.copilot/commands).
 
 ### Skills — the operative content
 
@@ -226,7 +322,7 @@ Every skill carries the invariant.
 
 ### Subagents — the specialists
 
-Three subagents in [`agents/`](agents), all `model: sonnet`, all with `disallowedTools: Write, Edit` — they evaluate, they do not modify.
+Three subagents in [`com.anthropic.claude/agents/`](com.anthropic.claude/agents), all `model: sonnet`, all with `disallowedTools: Write, Edit` — they evaluate, they do not modify.
 
 | Agent                  | Job                                            | Effort | Turns |
 | ---------------------- | ---------------------------------------------- | ------ | ----- |
@@ -234,14 +330,16 @@ Three subagents in [`agents/`](agents), all `model: sonnet`, all with `disallowe
 | `invariant-checker`    | The fast narrow pass → `Preserved` / `Lost`    | low    | 8     |
 | `ten-position-mapper`  | Structural cartography → map plus gaps         | medium | 12    |
 
-The division of labor is clean: `gregorian-decision` is the full operation, `invariant-checker` is the scalpel, `ten-position-mapper` does the cartography.
+The division of labor is clean: `gregorian-decision` is the full operation, `invariant-checker` is the scalpel, `ten-position-mapper` does the cartography. Copilot users get the same three specialists as `.agent.md` custom agents under [`com.github.copilot/agents/`](com.github.copilot/agents).
 
 ### Hooks — the ambient reminders
 
-Two hooks in [`hooks/hooks.json`](hooks/hooks.json), both non-blocking:
+Two hooks in [`com.anthropic.claude/hooks/hooks.json`](com.anthropic.claude/hooks/hooks.json), both non-blocking:
 
-- **SessionStart** runs [`scripts/welcome.sh`](scripts/welcome.sh), which greets you and lists the commands.
-- **PreToolUse** on `Write|Edit` runs [`scripts/design-reminder.sh`](scripts/design-reminder.sh), which fires only when the file being touched matches `*.design.md` and reminds you to check the invariant (R2) and scale (R4). It exits 0 — it reminds, it does not gate.
+- **SessionStart** runs [`com.anthropic.claude/scripts/welcome.sh`](com.anthropic.claude/scripts/welcome.sh), which greets you and lists the commands.
+- **PreToolUse** on `Write|Edit` runs [`com.anthropic.claude/scripts/design-reminder.sh`](com.anthropic.claude/scripts/design-reminder.sh), which fires only when the file being touched matches `*.design.md` and reminds you to check the invariant (R2) and scale (R4). It exits 0 — it reminds, it does not gate.
+
+The hook commands reference `${CLAUDE_PLUGIN_ROOT}` — the plugin root — so the scripts resolve through the namespace path (`com.anthropic.claude/scripts/`) and nothing escapes the plugin directory.
 
 ### Canon and synchronization
 
@@ -255,7 +353,9 @@ Two hooks in [`hooks/hooks.json`](hooks/hooks.json), both non-blocking:
 
 Questions and framework discussion: [open an issue](https://github.com/AlastairZeved/With-Love-Math/issues). Pull requests are welcome for corrections and reconciliations; proposals that change the framework itself should be opened as issues first, since the framework is the content of the plugin.
 
-The non-negotiable for any PR: **edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.** The skills each carry their own copy of the canon by design; a change that updates one copy but not the others breaks the synchronization rule the plugin runs on. Subagents under [`agents/`](agents) must keep `Write` and `Edit` disallowed — they evaluate, they do not modify.
+The non-negotiable for any PR: **edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.** The skills each carry their own copy of the canon by design; a change that updates one copy but not the others breaks the synchronization rule the plugin runs on. Subagents under [`com.anthropic.claude/agents/`](com.anthropic.claude/agents) must keep `Write` and `Edit` disallowed — they evaluate, they do not modify.
+
+When adding a client-namespaced component, add it to the owning namespace (`com.anthropic.claude/` for Claude Code, `com.github.copilot/` for Copilot), declare it in that client's manifest where the client supports it, and keep the portable `skills/` directory client-agnostic.
 
 ## License
 

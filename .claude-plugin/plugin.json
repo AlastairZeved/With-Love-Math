@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "with-love-math-framework",
-  "displayName": "With Love, Math",
+  "name": "with-love-math",
   "version": "1.0.0",
   "description": "The complete With Love, Math decisioning framework — four recursive principles, ten-position mapping, and a decision engine for any creative problem. The plugin is the framework.",
   "author": {
@@ -13,5 +12,18 @@
     "design-philosophy",
     "framework",
     "creativity"
-  ]
+  ],
+  "commands": [
+    "./com.anthropic.claude/commands/decide.md",
+    "./com.anthropic.claude/commands/diagnose.md",
+    "./com.anthropic.claude/commands/lexicon.md",
+    "./com.anthropic.claude/commands/map.md",
+    "./com.anthropic.claude/commands/teach.md"
+  ],
+  "agents": [
+    "./com.anthropic.claude/agents/gregorian-decision.md",
+    "./com.anthropic.claude/agents/invariant-checker.md",
+    "./com.anthropic.claude/agents/ten-position-mapper.md"
+  ],
+  "hooks": "./com.anthropic.claude/hooks/hooks.json"
 }

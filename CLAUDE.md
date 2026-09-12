@@ -117,5 +117,5 @@ the specific principle(s) that failed named explicitly.
 | `/teach`    | Teach the framework, adapted to the learner.               |
 | `/lexicon`  | Define the framework's terms.                              |
 
-Depth lives in the skills (`skills/`) and subagents (`agents/`); the commands
+Depth lives in the skills (`skills/`) and subagents (`com.anthropic.claude/agents/`); the commands
 are the stable public entry points.

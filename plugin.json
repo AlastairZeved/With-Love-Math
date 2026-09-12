@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "with-love-math",
+  "version": "1.0.0",
+  "description": "Runs any decision through the WHY/WHO/FEEL/EVOKE loop against four recursive principles (R1-R4), a ten-position map, and one invariant: WONDER.",
+  "author": { "name": "Alastair Zeved" },
+  "homepage": "https://github.com/AlastairZeved/With-Love-Math",
+  "repository": "https://github.com/AlastairZeved/With-Love-Math",
+  "license": "MIT",
+  "keywords": ["decision-making", "design-philosophy", "framework", "creativity"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "With Love, Math",
+        "category": "decision-making"
+      }
+    }
+  }
+}

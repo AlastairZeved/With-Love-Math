@@ -15,9 +15,11 @@
 
 Runs any decision through a WHY/WHO/FEEL/EVOKE loop, four principles, a ten-position map, one invariant: WONDER.
 
-With Love, Math is a decisioning framework packaged as an [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin — the portable package installs into any conformant agent, and client-namespaced components extend the agents that support more. It is not a cover generator, not a website builder, and not a chat partner for endless deliberation: it is a discipline for running a decision and getting a verdict — a binary **Aligned / Needs Revision** naming any failing principle.
-
-The name carries a comma the repository does not — the repo is `With-Love-Math`, the framework is *With Love, Math* (the sign-off, the breath, the point). This is the third pillar in the same body of work as Gregorian Mode and Editorial Loop. Where Gregorian Mode interrogates design choices and Editorial Loop interrogates text, this plugin interrogates decisions — any decision. It is the broadest of the three, and in some ways the most personal.
+An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that turns
+deliberation into a verdict. You give it a decision or an existing project; it runs
+the decision through a fixed rubric — four principles, one loop, one invariant —
+and returns **Aligned** or **Needs Revision**, naming exactly which principle
+failed and the single first move to fix it.
 
 <p align="center">
   <picture>

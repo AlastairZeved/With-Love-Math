@@ -13,8 +13,6 @@
 [![Standard Readme](https://img.shields.io/badge/standard--readme-follower-c9a227?style=flat-square&labelColor=0d0d10)](https://github.com/richardlitt/standard-readme)
 [![math-approved](https://img.shields.io/badge/math--approved-WONDER_preserved-f0d878?style=flat-square&labelColor=0d0d10)](#-the-invariant-wonder)
 
-Runs any decision through a WHY/WHO/FEEL/EVOKE loop, four principles, a ten-position map, one invariant: WONDER.
-
 An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that turns
 deliberation into a verdict. You give it a decision or an existing project; it runs
 the decision through a fixed rubric — four principles, one loop, one invariant —

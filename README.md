@@ -4,11 +4,11 @@
 
 # With Love, Math _(With-Love-Math)_
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](plugin.json)
-[![Agent Plugins 1.0.0](https://img.shields.io/badge/Agent_Plugins-1.0.0-blue.svg)](https://agent-plugins.org/specification)
-[![Standard Readme](https://img.shields.io/badge/standard--readme-follower-brightgreen.svg)](https://github.com/richardlitt/standard-readme)
-[![math-approved](https://img.shields.io/badge/math--approved-WONDER%20preserved-c9a227.svg)](#-the-invariant-wonder)
+[![License: MIT](https://img.shields.io/badge/License-MIT-c9a227?style=flat-square&labelColor=0d0d10)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-c9a227?style=flat-square&labelColor=0d0d10)](plugin.json)
+[![Agent Plugins](https://img.shields.io/badge/Agent_Plugins-1.0.0-c9a227?style=flat-square&labelColor=0d0d10)](https://agent-plugins.org/specification)
+[![Standard Readme](https://img.shields.io/badge/standard--readme-follower-c9a227?style=flat-square&labelColor=0d0d10)](https://github.com/richardlitt/standard-readme)
+[![math-approved](https://img.shields.io/badge/math--approved-WONDER_preserved-f0d878?style=flat-square&labelColor=0d0d10)](#-the-invariant-wonder)
 
 Runs any decision through a WHY/WHO/FEEL/EVOKE loop, four principles, a ten-position map, one invariant: WONDER.
 
@@ -17,6 +17,11 @@ With Love, Math is a decisioning framework packaged as an [Agent Plugins 1.0.0](
 The name carries a comma the repository does not — the repo is `With-Love-Math`, the framework is *With Love, Math* (the sign-off, the breath, the point). This is the third pillar in the same body of work as Gregorian Mode and Editorial Loop. Where Gregorian Mode interrogates design choices and Editorial Loop interrogates text, this plugin interrogates decisions — any decision. It is the broadest of the three, and in some ways the most personal.
 
 The plugin *is* the framework. It applies its own principles to itself: R1 by always returning to Why, R2 by checking every decision against the invariant, R3 by keeping each principle distinct yet unified, R4 by working at any scale — one decision or a whole project.
+
+> [!IMPORTANT]
+> **It is not a cover generator, not a website builder, and not a chat partner for endless deliberation.** It is a discipline for running a decision and getting a verdict — a binary **Aligned / Needs Revision** naming any failing principle.
+
+<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
 
 ## ▶️ Watch the showcase (1 min)
 
@@ -75,7 +80,8 @@ The root [`plugin.json`](plugin.json) is the [Agent Plugins 1.0.0](https://agent
 
 ### Dependencies
 
-None. Markdown only. (Git, to clone the repository.)
+> [!NOTE]
+> None. Markdown only. (Git, to clone the repository.)
 
 ### What loads where
 
@@ -282,6 +288,13 @@ The framework is the content; the plugin is its encoding. It has five components
 
 ### The four principles (R1–R4)
 
+<p align="center">
+  <img src=".github/assets/principles.svg" alt="The four principles: R1 Recursive Grounding — Why am I doing this?; R2 Emotion as Invariant — What feeling must I preserve?; R3 Distinction Within Unity — How do these parts make one whole?; R4 Scale the Invariance — Does this work at every size?" width="100%">
+</p>
+
+<details open>
+<summary><strong>As a table</strong> (screen-reader / copy-friendly)</summary>
+
 | Principle                     | Question                             | What it enforces                                    |
 | ----------------------------- | ------------------------------------ | --------------------------------------------------- |
 | **R1 · Recursive Grounding**  | "Why am I doing this?"               | Every decision traces back to its origin.           |
@@ -289,11 +302,28 @@ The framework is the content; the plugin is its encoding. It has five components
 | **R3 · Distinction Within Unity** | "How do these parts make one whole?" | Parts stay individually legible while cohering — "distinct colors, one shape." |
 | **R4 · Scale the Invariance** | "Does this work at every size?"      | Integrity holds from 2-inch icon to 10-foot mural.  |
 
+</details>
+
 ### The decisioning loop
+
+```mermaid
+flowchart LR
+    W["WHY"] --> H["WHO"] --> F["FEEL"] --> E["EVOKE"]
+    E -. "R1 · return to the origin" .-> W
+    style W fill:#0d0d10,stroke:#c9a227,color:#f0d878
+    style H fill:#0d0d10,stroke:#6b6455,color:#e8e3da
+    style F fill:#0d0d10,stroke:#6b6455,color:#e8e3da
+    style E fill:#0d0d10,stroke:#6b6455,color:#e8e3da
+```
+
+<details>
+<summary><strong>As plain text</strong></summary>
 
 ```
 WHY → WHO → FEEL → EVOKE → (return to WHY)
 ```
+
+</details>
 
 - **WHY** — the reason this exists
 - **WHO** — who it is for, who receives it
@@ -305,6 +335,13 @@ The loop is infinite; it always returns to the beginning. This is R1 in motion �
 ### The ten-position map
 
 A second lens on the same structure. The loop is the sequence you run; the map is the shape it makes.
+
+<p align="center">
+  <img src=".github/assets/map.svg" alt="The ten positions: 1 State the Goal, 2 WHY, 3 WHO, 4 FEEL, 5 EVOKE, 6 R1 Recursive Grounding, 7 R2 Emotion as Invariant, 8 R3 Distinction Within Unity, 9 R4 Scale the Invariance, 10 Find the Math — the terminal move." width="100%">
+</p>
+
+<details>
+<summary><strong>As a table</strong></summary>
 
 | Position | Element                |
 | -------- | ---------------------- |
@@ -319,6 +356,8 @@ A second lens on the same structure. The loop is the sequence you run; the map i
 | 9        | R4 · Scale the Invariance |
 | 10       | Find the Math          |
 
+</details>
+
 Position 10 — **Find the Math** — is the terminal move: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. This is the move most decision frameworks do not have; it is the claim that good decisions have an underlying form, and that naming it makes a decision more legible and more transferable.
 
 ### The four layers
@@ -332,7 +371,10 @@ Any element can be read at any layer; a good decision holds at all four. (See [B
 
 ### 💫 The invariant: WONDER
 
+> [!TIP]
 > **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what R2 preserves and R4 scales — the single test the whole framework resolves to.
+
+<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
 
 ## 🏛️ Architecture
 
@@ -387,9 +429,12 @@ The hook commands reference `${CLAUDE_PLUGIN_ROOT}` — the plugin root — so t
 
 ### Canon and synchronization
 
+> [!WARNING]
 > **Edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.**
 
 [`CLAUDE.md`](CLAUDE.md) at the plugin root is the human-readable single source of truth for the framework — and, as the file states explicitly, it is *not* auto-loaded into the host agent's context. The operative content is carried into context by the skills, each of which restates only the compact canon it needs. This is a deliberate synchronization burden accepted in exchange for skills that work standalone.
+
+<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
 
 ## Maintainers
 
@@ -407,6 +452,9 @@ When adding a client-namespaced component, add it to the owning namespace (`com.
 
 [MIT](LICENSE) © AlastairZeved
 
----
+<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
 
-<sub>github.com/alastairzeved/with-love-math — *With Love, Math.* The framework is meant to be passed on.</sub>
+<p align="center">
+  <sub><strong>github.com/alastairzeved/with-love-math</strong> — *With Love, Math.*<br>
+  <em>The framework is meant to be passed on.</em></sub>
+</p>

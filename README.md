@@ -13,7 +13,7 @@
 [![Standard Readme](https://img.shields.io/badge/standard--readme-follower-c9a227?style=flat-square&labelColor=0d0d10)](https://github.com/richardlitt/standard-readme)
 [![math-approved](https://img.shields.io/badge/math--approved-WONDER_preserved-f0d878?style=flat-square&labelColor=0d0d10)](#the-invariant-wonder)
 
-An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that turns deliberation into a verdict. You give it a decision or an existing project; it runs the decision through a fixed rubric — four principles, one loop, one invariant — and returns **Aligned** or **Needs Revision**, naming exactly which principle failed and the single first move to fix it.
+An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that turns deliberation into a verdict. It is a folder of written instructions an agent reads when it starts. Nothing to compile, nothing to run. Hand it a decision, or a project already underway, and it runs the whole thing through one fixed set of questions: four principles, one loop, one invariant — the one thing that must not change. What comes back is a verdict, **Aligned** or **Needs Revision**, and when the answer is Needs Revision it names exactly which principle failed and the single first move to fix it.
 
 <p align="center">
   <picture>
@@ -22,12 +22,12 @@ An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that tu
   </picture>
 </p>
 
-The plugin *is* the framework. It applies its own principles to itself: R1 by always returning to Why, R2 by checking every decision against the invariant, R3 by keeping each principle distinct yet unified, R4 by working at any scale — one decision or a whole project.
+The plugin *is* the framework. It applies its own principles to itself: **R1 · Recursive Grounding** by always returning to Why, **R2 · Emotion as Invariant** by checking every decision against the invariant, **R3 · Distinction Within Unity** by keeping each principle distinct yet unified, and **R4 · Scale the Invariance** by working at any scale — one decision or a whole project.
 
 > [!IMPORTANT]
-> **It is not a cover generator, not a website builder, and not a chat partner for endless deliberation.** It is a discipline for running a decision and getting a verdict — a binary **Aligned / Needs Revision** naming any failing principle.
+> **It is not a cover generator, not a website builder, and not a chat partner for endless deliberation.** Those three all produce something — a cover, a site, more conversation. This one produces a judgement. It is a discipline for running a decision and getting a verdict: a binary **Aligned / Needs Revision** that names any failing principle.
 
-**How to read this page.** The README is built as seven numbered plates on one continuous ground. Every plate carries a ribbon icon, every chapter is numbered, and the invariant — **WONDER** — recurs as a visual anchor. Land anywhere: the plate number and icon tell you where you are, and [the verdict table](#the-verdict-table) is never more than one click away in the [contents](#contents).
+**How to read this page.** The README is built as seven numbered plates on one continuous ground. A plate is one page in a bound book — self-contained, and printed on a ground that runs behind all seven. Every plate carries a ribbon icon, every chapter is numbered, and the invariant — **WONDER** — recurs as a visual anchor. Land anywhere: the plate number and icon tell you where you are, and [the verdict table](#the-verdict-table) is never more than one click away in the [contents](#contents).
 
 <p align="center">
   <picture>
@@ -43,13 +43,13 @@ The plugin *is* the framework. It applies its own principles to itself: R1 by al
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-00.svg">
-    <img src=".github/assets/plate-00-light.svg" alt="Plate 00 — Watch the Showcase. Sixty-four seconds: the four principles, the loop, and the invariant in motion." width="100%">
+    <img src=".github/assets/plate-00-light.svg" alt="Plate 00 — Watch the Showcase. The four principles, the loop, and the invariant in motion." width="100%">
   </picture>
 </p>
 
-https://github.com/user-attachments/assets/95a86047-7f20-4f94-b625-53c041392bc1
+https://github.com/user-attachments/assets/85ad0725-a5d8-4eb8-9937-c1517d581007
 
-*The 64-second showcase — the four principles, the loop, and the invariant in motion. Direct download: <a href="https://github.com/AlastairZeved/With-Love-Math/releases/download/showcase/with-love-math-showcase.mp4">MP4 (16.7 MB, release asset)</a>.*
+*The 87-second showcase — the four principles, the loop, and the invariant in motion. Direct download: <a href="https://github.com/AlastairZeved/With-Love-Math/releases/download/showcase/with-love-math-showcase.mp4">MP4 (20.5 MB)</a>, from the downloads shelf GitHub keeps beside every project.*
 
 ## Contents
 
@@ -57,7 +57,7 @@ https://github.com/user-attachments/assets/95a86047-7f20-4f94-b625-53c041392bc1
 
 | | | |
 |---|---|---|
-| [**Plate 00 — Watch the showcase**](#plate-00) · *1 min* | [**Plate 01 — Background**](#plate-01) | [**Plate 02 — Install**](#plate-02) |
+| [**Plate 00 — Watch the showcase**](#plate-00) · *1½ min* | [**Plate 01 — Background**](#plate-01) | [**Plate 02 — Install**](#plate-02) |
 | [**Plate 03 — Usage**](#plate-03) — commands · example · output | [**Plate 04 — The Framework**](#plate-04) — principles · loop · map · layers · WONDER | [**Plate 05 — Architecture**](#plate-05) — packaging · skills · subagents · hooks |
 | [**Plate 06 — Colophon**](#plate-06) — maintainers · contributing · license | | |
 
@@ -65,14 +65,14 @@ https://github.com/user-attachments/assets/95a86047-7f20-4f94-b625-53c041392bc1
 
 ### The verdict table
 
-The framework's output is binary at the top level. Every run of the decision engine, every audit, every check resolves to one of two verdicts — the same two words a reader can land on from anywhere on this page:
+The framework answers with one of two words. Every run — whether you asked it to decide, to audit, or to map — resolves to the same pair:
 
 | Verdict | Mark | Meaning | Named by |
 |---|---|---|---|
 | **Aligned** <img src=".github/assets/icons/verdict-aligned.svg" width="26" alt="" align="center"> | | The decision holds: the loop was run, the principles pass, the invariant is preserved. | — |
 | **Needs Revision** <img src=".github/assets/icons/verdict-revision.svg" width="26" alt="" align="center"> | | The decision does not yet hold — and the framework names the failing principle(s) and the single first move. | R1 / R2 / R3 / R4 by name |
 
-The verdict is never softened: a Fail is never rounded up to a Weak to reach Aligned. The [output format](#output-format) shows the exact shape.
+Each principle is graded on its own, as Pass, Weak, or Fail, but the verdict on top stays binary. It is never softened: a Fail is never rounded up to a Weak to reach Aligned. The [output format](#output-format) shows the exact shape.
 
 <a name="plate-01" id="plate-01"></a>
 
@@ -94,9 +94,11 @@ Most work starts with a reason and a feeling, and then loses both. Iterations ac
   </picture>
 </p>
 
-With Love, Math is a framework for not losing them: R1 traces every choice back to its origin; R2 names the feeling before you start and holds it constant through every change.
+With Love, Math is a framework for not losing them: **R1 · Recursive Grounding** traces every choice back to where it started; **R2 · Emotion as Invariant** names the feeling before you begin and holds it steady through every change.
 
-"Gregorian" is the term the author reuses from Gregorian Mode, where it was defined as *a standard strangers adopt and never stop running* — hence `gregorian-decision`, the name of the full-framework subagent. Here the standard is a four-principle decisioning framework whose single invariant is WONDER. The framework is meant to be passed on, not just used privately: the `/teach` command and `tutor` skill exist precisely so others can adopt and run it.
+**Gregorian** is the author's word for *a standard strangers adopt and never stop running* — coined in Gregorian Mode, the sibling project about design choices, and carried over into this one. It survives in `gregorian-decision`, the name of the subagent that runs the whole framework in one pass. A subagent, for anyone meeting the word for the first time, is a smaller second agent that the main one hands one narrow job to. Three such subagents ship with this plugin, and they are introduced in Plate 05.
+
+Here the standard is a four-principle decisioning framework whose single invariant is WONDER. The framework is meant to be passed on, not only used privately — the `/teach` command and the `tutor` skill exist precisely so others can adopt it and run it.
 
 | The claim | What it means here |
 |---|---|
@@ -115,13 +117,13 @@ Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — war
   </picture>
 </p>
 
-No build step, no package manager, no runtime dependencies — the plugin is plain markdown that a compatible agent discovers on load. Clone once; every install path below starts from that clone or reads the repository directly.
+No build step, no package manager, no runtime dependencies — nothing to compile and nothing to keep updated. The plugin is plain markdown: a folder of text files that a compatible agent reads when it loads. That is the whole mechanism, and it is why most install routes below come down to the same move: put this folder where your agent already looks — or name the repository and let the command fetch it. Clone once; every route starts from that clone or reads the repository directly.
 
 ```bash
 git clone https://github.com/AlastairZeved/With-Love-Math.git
 ```
 
-The root [`plugin.json`](plugin.json) is the [Agent Plugins 1.0.0](https://agent-plugins.org/specification) manifest — the portable source of truth every conformant client reads. Client-specific adapters live in their own namespaces and are ignored by clients that do not implement them, which is what keeps the package portable.
+The root [`plugin.json`](plugin.json) is the [Agent Plugins 1.0.0](https://agent-plugins.org/specification) manifest — one small file at the top of the folder that tells any agent what is inside before it reads anything else. Because that file follows a published standard, every client that speaks it reads this plugin unchanged — that is what *portable* means here. Where clients differ, their extra pieces sit in a namespace of their own, a folder named for one client only, and every other client ignores it. Nothing portable depends on anything namespaced, which is what keeps the package portable.
 
 ### Dependencies
 
@@ -142,7 +144,7 @@ The root [`plugin.json`](plugin.json) is the [Agent Plugins 1.0.0](https://agent
 
 \* Cursor reads the Claude-namespace `commands/` and `agents/` through its [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) manifest where a Claude-style command or agent is understood.
 
-In agents that register no slash commands, the same procedures are reachable in words — "Run the decision engine on `<decision>`" reaches the identical skill. The commands are doors, not the house.
+In agents that register no slash-command menu, the same procedures are reachable in words — "Run the decision engine on `<decision>`" reaches the identical skill that `/decide` does. The commands are doors, not the house.
 
 ### Per-agent instructions
 
@@ -166,11 +168,11 @@ git clone https://github.com/AlastairZeved/With-Love-Math.git
 claude --plugin-dir ./With-Love-Math
 ```
 
-The `--plugin-dir` flag loads the plugin directly without marketplace installation. There is no `marketplace.json` in this repository, so `/plugin marketplace add AlastairZeved/With-Love-Math` will not work; `--plugin-dir` is the documented direct-load path.
+The `--plugin-dir` flag loads the plugin straight from the folder you cloned above and skips the marketplace route entirely. A marketplace, in Claude Code, is only a catalog file listing what is on offer; this repository ships no such file, so `/plugin marketplace add AlastairZeved/With-Love-Math` has nothing to read and will not work. `--plugin-dir` is the documented direct-load path.
 
-The five commands, three subagents, and both hooks live under the [`com.anthropic.claude/`](com.anthropic.claude) client namespace, declared in [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json). `claude plugin validate .` passes on this repository as shipped.
+The five commands, three subagents, and both hooks live under the [`com.anthropic.claude/`](com.anthropic.claude) client namespace — the folder named for Claude Code — declared in [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json). (Hooks are small scripts the client runs on its own at set moments — the start of a session, the moment a file is saved.) `claude plugin validate .` passes on this repository as shipped.
 
-To install permanently, copy the plugin into your personal skills directory:
+To install permanently, copy the plugin into your personal skills directory — the folder Claude Code scans on startup for anything it can load:
 
 ```bash
 cp -r ./With-Love-Math ~/.claude/skills/with-love-math
@@ -190,7 +192,7 @@ hermes plugins enable with-love-math
 hermes gateway restart
 ```
 
-Portable Agent Plugins packages install disabled by default; enable explicitly and restart the gateway for the skills to take effect. The four portable skills are discovered from the root manifest; `hermes plugins validate <repo-dir>` and `hermes plugins show with-love-math` verify the install, and `hermes plugins remove with-love-math` removes it.
+An Agent Plugins package arrives switched off — enable it explicitly, then restart the gateway (the background service that runs your agent) so the skills are picked up. The four portable skills are discovered from the root manifest; `hermes plugins validate <repo-dir>` and `hermes plugins show with-love-math` check the install, and `hermes plugins remove with-love-math` takes it out again.
 
 </details>
 
@@ -198,9 +200,9 @@ Portable Agent Plugins packages install disabled by default; enable explicitly a
 <details>
 <summary><strong>Codex</strong> · CLI plugin browser or ChatGPT desktop app</summary>
 
-Requires [Codex](https://developers.openai.com/codex). Codex reads the portable root [`plugin.json`](plugin.json) — which declares the Agent Plugins schema and carries OpenAI's presentation data under `extensions["com.openai"]` (display name "With Love, Math", category "decision-making").
+Requires [Codex](https://developers.openai.com/codex). Codex reads the portable root [`plugin.json`](plugin.json) — the file that both declares the standard it follows and carries a small block of OpenAI-specific extras under `extensions["com.openai"]` (display name "With Love, Math", category "decision-making").
 
-OpenAI documents the `.codex-plugin/plugin.json` manifest as a supported compatibility fallback for existing `.codex-plugin/` packages.
+OpenAI documents the `.codex-plugin/plugin.json` manifest as a backwards-compatible alternative for packages already built on that older layout.
 
 In **Codex CLI**, open the plugin browser and install from a configured marketplace:
 
@@ -214,11 +216,11 @@ To make the plugin installable from this repository, add the repo as a marketpla
 codex plugin marketplace add AlastairZeved/With-Love-Math
 ```
 
-For **local testing**, OpenAI's packaging documentation routes local plugins through a marketplace file — either a repo-scoped `.agents/plugins/marketplace.json` (with the plugin folder under `$REPO_ROOT/plugins/`) or a personal one at `~/.agents/plugins/marketplace.json`.
+For **local testing**, OpenAI's packaging documentation routes local plugins through a marketplace file — a small catalog of what is on offer, the same idea as Claude Code's marketplace above — either a repo-scoped `.agents/plugins/marketplace.json` (with the plugin folder under `$REPO_ROOT/plugins/`) or a personal one at `~/.agents/plugins/marketplace.json`.
 
-Install from the marketplace in the CLI browser or the ChatGPT desktop app and start a new session. Bundled skills become available in the new session. The `.codex-plugin/plugin.json` fallback manifest ships for environments that expect the legacy layout.
+Install from the marketplace in the CLI browser or the ChatGPT desktop app and start a new session. Bundled skills become available in the new session. The `.codex-plugin/plugin.json` fallback ships for environments still expecting the old layout.
 
-The three subagents stay in the Claude namespace — Codex subagents use TOML definitions, which this repo does not ship.
+The three subagents stay in the Claude namespace — Codex describes its own subagents in TOML files, a different text format, and this repository ships none.
 
 </details>
 
@@ -230,7 +232,7 @@ Requires [Cursor](https://cursor.com/docs/plugins). Cursor supports the Agent Pl
 
 Cursor-specific components keep working through the [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) manifest, which points at the portable `skills/` directory and at the Claude-namespace `commands/` and `agents/`.
 
-Install from a marketplace: open **Customize** in the sidebar, find the plugin, and select **Install** with a project or user scope.
+Install from a marketplace: open **Customize** in the sidebar, find the plugin, and select **Install** — choosing whether it applies to this one project or to everything you open.
 
 Develop locally without a marketplace:
 
@@ -248,7 +250,7 @@ then restart Cursor (or run **Developer: Reload Window**) and confirm the skills
 
 Requires Copilot in VS Code, the Copilot CLI, or the app. Copilot supports Agent Plugins 1.0.0: it reads the portable `skills/` directory and the root `plugin.json`.
 
-Copilot-specific components come from the [`com.github.copilot/`](com.github.copilot) client namespace — the three specialists as `.agent.md` custom agents and the five command procedures as command wrappers — so Copilot users get the full plugin, not only the portable skills.
+Copilot-specific components come from the [`com.github.copilot/`](com.github.copilot) client namespace — the three specialists as `.agent.md` custom agents (the file format VS Code uses for one) and the five command procedures as command wrappers — so Copilot users get the full plugin, not only the portable skills.
 
 From the Copilot CLI, installing straight from the repository is a documented path:
 
@@ -256,7 +258,7 @@ From the Copilot CLI, installing straight from the repository is a documented pa
 copilot plugin install AlastairZeved/With-Love-Math
 ```
 
-The `install` command accepts an `OWNER/REPO` root, a Git URL, or a local directory. From **VS Code**, run **Chat: Install Plugin From Source** from the Command Palette (or **Install Plugin from Source** on the Plugins page of the Agent Customizations editor) and enter the repository URL:
+The `install` command accepts the `OWNER/REPO` shorthand you already see in GitHub URLs, a Git URL, or a local directory. From **VS Code**, run **Chat: Install Plugin From Source** from the Command Palette (or **Install Plugin from Source** on the Plugins page of the Agent Customizations editor) and enter the repository URL:
 
 ```text
 https://github.com/AlastairZeved/With-Love-Math
@@ -270,7 +272,7 @@ Support for agent plugins can be toggled with the `chat.plugins.enabled` VS Code
 <details>
 <summary><strong>Pi Agent</strong> · clone into <code>~/.pi/agent/skills/</code></summary>
 
-Pi discovers skills in its config directory, recursively finding any directory that contains a `SKILL.md`. Clone the repository into its global skills directory and the four portable skills are found automatically — no manifest needed.
+Pi finds skills by scanning its config directory for any folder that holds a `SKILL.md` — the single markdown file, sitting at the top of a folder, that makes that folder a skill. Clone the repository into Pi's global skills directory and the four portable skills are found automatically; no manifest needed.
 
 ```bash
 git clone https://github.com/AlastairZeved/With-Love-Math.git ~/.pi/agent/skills/with-love-math
@@ -284,7 +286,7 @@ git clone https://github.com/AlastairZeved/With-Love-Math.git ~/.pi/agent/skills
 <details>
 <summary><strong>Any other SKILL.md-compatible agent</strong> · copy a skill folder</summary>
 
-Copy any folder under `skills/` into the agent's skills directory. Each skill is a self-contained `SKILL.md` with YAML frontmatter (`name`, `description`); nothing else is required.
+Copy any folder under `skills/` into the agent's skills directory. Each skill is a self-contained `SKILL.md` with a small header at the top — a name and a description, between two `---` lines — and nothing else is required.
 
 ```bash
 git clone https://github.com/AlastairZeved/With-Love-Math.git
@@ -305,7 +307,7 @@ cp -r With-Love-Math/skills/* ~/.your-agent/skills/
   </picture>
 </p>
 
-Once the plugin is loaded, the session-start hook greets you and lists the commands — in agents that ship the hook. Five commands, stable and minimal; each dispatches to a skill or subagent beneath it. In agents that do not register slash commands, invoke the same procedures in words — "Run the decision engine on `<decision>`" reaches the identical skill.
+Once the plugin is loaded, the session-start hook greets you and lists the commands — in the agents that have one. Five commands, stable and minimal; each one hands its work to a skill or a subagent underneath. In agents that do not register slash-command menus, invoke the same procedures in words — "Run the decision engine on `<decision>`" reaches the identical skill.
 
 ### Commands
 
@@ -336,7 +338,7 @@ Once the plugin is loaded, the session-start hook greets you and lists the comma
 
 ### Output format
 
-The decision engine returns a structured verdict, in this fixed format:
+The decision engine behind `/decide` returns a structured verdict, in this fixed format:
 
 ```text
 DECISION: <restated in one line>
@@ -360,7 +362,7 @@ VERDICT: Aligned  |  Needs Revision
   <if Needs Revision: name the failing principle(s) and the single first move>
 ```
 
-The verdict is binary at the top level; failures are named by principle, and the framework never softens a Fail into a Weak to reach Aligned. If you want a verdict instead of a discussion, this is the point.
+The verdict is binary; failures are named by principle, and the framework never softens a Fail into a Weak to reach Aligned. If you want a verdict instead of a discussion, this is the point.
 
 <a name="plate-04" id="plate-04"></a>
 
@@ -373,7 +375,7 @@ The verdict is binary at the top level; failures are named by principle, and the
   </picture>
 </p>
 
-The framework is the content; the plugin is its encoding. It has five components — four principles, one loop, one map, four layers, one invariant.
+The framework is the content; the plugin is how that content is packaged and shipped. It has five parts — four principles, one loop, one map, four layers, one invariant.
 
 ### The four principles (R1–R4)
 
@@ -408,9 +410,9 @@ The framework is the content; the plugin is its encoding. It has five components
 - **WHY** — the reason this exists
 - **WHO** — who it is for, who receives it
 - **FEEL** — the feeling that must be preserved
-- **EVOKE** — how that feeling is produced
+- **EVOKE** — how you produce that feeling in the person who receives it
 
-The loop is infinite; it always returns to the beginning. This is R1 in motion — no decision is ever fully grounded, only re-grounded each time you run the loop.
+The loop is infinite; it always returns to the beginning. This is R1 in motion — no decision is ever fully grounded, only grounded again each time you run the loop. Grounding, throughout this framework, means tracing a thing back to the reason it exists.
 
 ### The ten-position map
 
@@ -441,7 +443,7 @@ A second lens on the same structure. The loop is the sequence you run; the map i
 
 </details>
 
-Position 10 — **Find the Math** — is the terminal move: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. This is the move most decision frameworks do not have; it is the claim that good decisions have an underlying form, and that naming it makes a decision more legible and more transferable.
+Position 10 — **Find the Math** — is where the map ends: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. Most decision frameworks stop before this point. The claim here is that good decisions have an underlying form, and that naming it makes them easier to see and easier to hand on.
 
 ### The four layers
 
@@ -452,7 +454,7 @@ Position 10 — **Find the Math** — is the terminal move: name the pattern, ra
   </picture>
 </p>
 
-Any element can be read at any layer; a good decision holds at all four. (See [Background](#plate-01).)
+Any element can be read at any layer, and a good decision holds at all four — **Design Philosophy** (the physical object), **Self-Help / Self-Love** (the emotional life of it), **Math in Nature** (the structural pattern underneath), and **Esotericism** (the spiritual reading: what it means beyond what it does). The four are read together in [Background](#plate-01).
 
 ### The invariant: WONDER
 
@@ -464,7 +466,7 @@ Any element can be read at any layer; a good decision holds at all four. (See [B
 </p>
 
 > [!TIP]
-> **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what R2 preserves and R4 scales — the single test the whole framework resolves to.
+> **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what **R2 · Emotion as Invariant** preserves and **R4 · Scale the Invariance** scales — the single test the whole framework resolves to.
 
 The invariant is the page's visual anchor: it appears as the closing mark of the [banner](#), returns as the anchor of Plate 06 below, and is the mark every verdict resolves against (see [the verdict table](#the-verdict-table)).
 
@@ -581,15 +583,15 @@ The operative content is carried into context by the skills, each of which resta
 
 ### Contributing
 
-Questions and framework discussion: [open an issue](https://github.com/AlastairZeved/With-Love-Math/issues). Pull requests are welcome for corrections and reconciliations; proposals that change the framework itself should be opened as issues first, since the framework is the content of the plugin.
+Questions and framework discussion: [open an issue](https://github.com/AlastairZeved/With-Love-Math/issues). Pull requests are welcome for corrections and for keeping the several copies in sync; proposals that change the framework itself should be opened as issues first, since the framework is the content of the plugin.
 
 | The one non-negotiable | The reason |
 |---|---|
 | **Edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.** | The skills each carry their own copy of the canon by design; a change that updates one copy but not the others breaks the synchronization rule the plugin runs on. Subagents under [`com.anthropic.claude/agents/`](com.anthropic.claude/agents) must keep `Write` and `Edit` disallowed — they evaluate, they do not modify. |
 
-When adding a client-namespaced component, add it to the owning namespace (`com.anthropic.claude/` for Claude Code, `com.github.copilot/` for Copilot), declare it in that client's manifest where the client supports it, and keep the portable `skills/` directory client-agnostic.
+When you add a piece that only one client understands, put it in that client's own namespace (`com.anthropic.claude/` for Claude Code, `com.github.copilot/` for Copilot), declare it in that client's manifest where the client supports it, and keep the portable `skills/` directory free of anything client-specific.
 
-Per-agent adapters live in [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) (Codex compatibility fallback) and [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (Cursor) — update them when the portable surface they reference changes.
+Per-agent adapters live in [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) (Codex compatibility fallback) and [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (Cursor) — update them whenever the portable files they point at change.
 
 ### License
 

@@ -193,19 +193,18 @@ def drift():
              f'fill="none" stroke="{P["sub"]}" stroke-width="1.6" stroke-dasharray="2 7" stroke-linecap="round"/>')
     for (tx, ty) in [(470,158),(610,242),(760,196),(920,112),(1050,150),(1210,236)]:
         b.append(f'<circle cx="{tx}" cy="{ty}" r="3" fill="{P["dim"]}"/>')
-    b.append(text("iterations · constraints · other people's opinions", 17, "ita", P["dim"], x=800, y=76, anchor="middle")[0])
+    b.append(text("iterations · constraints · other people's opinions", 17, "ita", P["dim"], x=1000, y=76, anchor="middle")[0])
     b.append(f'<circle cx="330" cy="180" r="7" fill="{P["gold"]}"/>')
     b.append(f'<circle cx="330" cy="180" r="13" fill="none" stroke="{P["gold"]}" stroke-width="1" opacity="0.4"/>')
-    b.append(text("the origin", 15, "mono", P["gold"], x=330, y=225, anchor="middle")[0])
     b.append(f'<circle cx="1280" cy="180" r="9" fill="{P["node"]}" stroke="{P["node_stroke"]}" stroke-width="1.6"/>')
     b.append(text("where it arrived", 15, "mono", P["sub"], x=1280, y=225, anchor="middle")[0])
     b.append(f'<path d="M1268 196 C 1150 320, 480 320, 348 208" fill="none" stroke="{P["gold"]}" '
              f'stroke-width="2.2" stroke-dasharray="6 5"/>')
     b.append(f'<g transform="translate(344,206) rotate(-140)"><path d="M-9 -6 L9 0 L-9 6 Z" fill="{P["gold"]}"/></g>')
     b.append(text("R1 · traces every choice back to its origin", 17, "mono", P["gold"], x=800, y=338, anchor="middle")[0])
-    b.append(f'<line x1="330" y1="108" x2="1280" y2="108" stroke="{P["gold"]}" stroke-width="1.6" opacity="0.75"/>')
+    b.append(f'<line x1="330" y1="116" x2="1280" y2="116" stroke="{P["gold"]}" stroke-width="1.6" opacity="0.75"/>')
     b.append(ribbon_snippet("loop-feel", 1225, 76))
-    b.append(text("R2 · the feeling, named at the start and held constant", 17, "ita", P["gold_hi"], x=620, y=90, anchor="middle")[0])
+    b.append(text("R2 · the feeling, named at the start and held constant", 17, "ita", P["gold_hi"], x=560, y=88, anchor="middle")[0])
     b.append(text("the origin", 15, "mono", P["gold"], x=300, y=248, anchor="middle")[0])
     return "".join(b)
 

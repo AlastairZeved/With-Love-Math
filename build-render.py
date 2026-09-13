@@ -14,10 +14,31 @@ os.makedirs(OUT, exist_ok=True)
 
 md = open(f"{REPO}/README.md", encoding="utf8").read()
 
+# ── GitHub parses markdown INSIDE <details> blocks; python-markdown does not.
+#    Convert each details' inner markdown ourselves and stash it behind a
+#    placeholder so the outer pass cannot re-mangle it. ──
+DETAILS = []
+
+def stash_details(m):
+    block = m.group(0)
+    lm = re.match(r'(?s)(<details[^>]*>\s*<summary>.*?</summary>)(.*)(</details>)', block)
+    if not lm:
+        return block
+    head, inner, tail = lm.group(1), lm.group(2), lm.group(3)
+    inner_html = markdown.markdown(inner.strip(),
+                                   extensions=['tables', 'fenced_code', 'sane_lists'], output_format='html5')
+    idx = len(DETAILS)
+    DETAILS.append(head + inner_html + tail)
+    return f'@@DETAILS{idx}@@'
+
+md = re.sub(r'(?s)<details[^>]*>.*?</details>', stash_details, md)
+
 # ── render GFM-ish HTML; keep <picture> markup intact so color-scheme works ──
-# protect raw HTML blocks (picture/details/anchors) from the markdown parser
 html = markdown.markdown(md, extensions=['tables', 'fenced_code', 'sane_lists', 'md_in_html'],
                          output_format='html5')
+for i, block in enumerate(DETAILS):
+    html = html.replace(f'@@DETAILS{i}@@', block)
+    html = html.replace(f'<p>@@DETAILS{i}@@</p>', block)
 html = html.replace('src=".github/assets/', f'src="{REPO}/.github/assets/')
 html = html.replace('srcset=".github/assets/', f'srcset="{REPO}/.github/assets/')
 

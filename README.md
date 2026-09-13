@@ -1,5 +1,8 @@
 <p align="center">
-  <img src=".github/assets/banner.svg" alt="With Love, Math. — A framework meant to be passed on." width="830">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner.svg">
+    <img src=".github/assets/banner-light.svg" alt="With Love, Math. — A framework meant to be passed on." width="830">
+  </picture>
 </p>
 
 # With Love, Math _(With-Love-Math)_
@@ -21,7 +24,12 @@ The plugin *is* the framework. It applies its own principles to itself: R1 by al
 > [!IMPORTANT]
 > **It is not a cover generator, not a website builder, and not a chat partner for endless deliberation.** It is a discipline for running a decision and getting a verdict — a binary **Aligned / Needs Revision** naming any failing principle.
 
-<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/divider.svg">
+    <img src=".github/assets/divider-light.svg" alt="" width="700">
+  </picture>
+</p>
 
 ## ▶️ Watch the showcase (1 min)
 
@@ -289,7 +297,10 @@ The framework is the content; the plugin is its encoding. It has five components
 ### The four principles (R1–R4)
 
 <p align="center">
-  <img src=".github/assets/principles.svg" alt="The four principles: R1 Recursive Grounding — Why am I doing this?; R2 Emotion as Invariant — What feeling must I preserve?; R3 Distinction Within Unity — How do these parts make one whole?; R4 Scale the Invariance — Does this work at every size?" width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/principles.svg">
+    <img src=".github/assets/principles-light.svg" alt="The four principles: R1 Recursive Grounding — Why am I doing this?; R2 Emotion as Invariant — What feeling must I preserve?; R3 Distinction Within Unity — How do these parts make one whole?; R4 Scale the Invariance — Does this work at every size?" width="100%">
+  </picture>
 </p>
 
 <details open>
@@ -337,7 +348,10 @@ The loop is infinite; it always returns to the beginning. This is R1 in motion �
 A second lens on the same structure. The loop is the sequence you run; the map is the shape it makes.
 
 <p align="center">
-  <img src=".github/assets/map.svg" alt="The ten positions: 1 State the Goal, 2 WHY, 3 WHO, 4 FEEL, 5 EVOKE, 6 R1 Recursive Grounding, 7 R2 Emotion as Invariant, 8 R3 Distinction Within Unity, 9 R4 Scale the Invariance, 10 Find the Math — the terminal move." width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/map.svg">
+    <img src=".github/assets/map-light.svg" alt="The ten positions: 1 State the Goal, 2 WHY, 3 WHO, 4 FEEL, 5 EVOKE, 6 R1 Recursive Grounding, 7 R2 Emotion as Invariant, 8 R3 Distinction Within Unity, 9 R4 Scale the Invariance, 10 Find the Math — the terminal move." width="100%">
+  </picture>
 </p>
 
 <details>
@@ -374,7 +388,12 @@ Any element can be read at any layer; a good decision holds at all four. (See [B
 > [!TIP]
 > **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what R2 preserves and R4 scales — the single test the whole framework resolves to.
 
-<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/divider.svg">
+    <img src=".github/assets/divider-light.svg" alt="" width="700">
+  </picture>
+</p>
 
 ## 🏛️ Architecture
 
@@ -434,7 +453,12 @@ The hook commands reference `${CLAUDE_PLUGIN_ROOT}` — the plugin root — so t
 
 [`CLAUDE.md`](CLAUDE.md) at the plugin root is the human-readable single source of truth for the framework — and, as the file states explicitly, it is *not* auto-loaded into the host agent's context. The operative content is carried into context by the skills, each of which restates only the compact canon it needs. This is a deliberate synchronization burden accepted in exchange for skills that work standalone.
 
-<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/divider.svg">
+    <img src=".github/assets/divider-light.svg" alt="" width="700">
+  </picture>
+</p>
 
 ## Maintainers
 
@@ -452,7 +476,12 @@ When adding a client-namespaced component, add it to the owning namespace (`com.
 
 [MIT](LICENSE) © AlastairZeved
 
-<p align="center"><img src=".github/assets/divider.svg" alt="" width="700"></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/divider.svg">
+    <img src=".github/assets/divider-light.svg" alt="" width="700">
+  </picture>
+</p>
 
 <p align="center">
   <sub><strong>github.com/alastairzeved/with-love-math</strong> — *With Love, Math.*<br>

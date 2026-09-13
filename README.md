@@ -37,6 +37,9 @@ The plugin *is* the framework. It applies its own principles to itself: R1 by al
 </p>
 
 <a name="plate-00" id="plate-00"></a>
+
+## Plate 00 — Watch the Showcase
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-00.svg">
@@ -72,6 +75,9 @@ The framework's output is binary at the top level. Every run of the decision eng
 The verdict is never softened: a Fail is never rounded up to a Weak to reach Aligned. The [output format](#output-format) shows the exact shape.
 
 <a name="plate-01" id="plate-01"></a>
+
+## Plate 01 — Background
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-01.svg">
@@ -99,6 +105,9 @@ With Love, Math is a framework for not losing them: R1 traces every choice back 
 Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — warm enough to invite, strange enough to be memorable, confident enough to commit, refined enough to trust.
 
 <a name="plate-02" id="plate-02"></a>
+
+## Plate 02 — Install
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-02.svg">
@@ -286,6 +295,9 @@ cp -r With-Love-Math/skills/* ~/.your-agent/skills/
 </details>
 
 <a name="plate-03" id="plate-03"></a>
+
+## Plate 03 — Usage
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-03.svg">
@@ -351,6 +363,9 @@ VERDICT: Aligned  |  Needs Revision
 The verdict is binary at the top level; failures are named by principle, and the framework never softens a Fail into a Weak to reach Aligned. If you want a verdict instead of a discussion, this is the point.
 
 <a name="plate-04" id="plate-04"></a>
+
+## Plate 04 — The Framework
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-04.svg">
@@ -461,6 +476,9 @@ The invariant is the page's visual anchor: it appears as the closing mark of the
 </p>
 
 <a name="plate-05" id="plate-05"></a>
+
+## Plate 05 — Architecture
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-05.svg">
@@ -547,6 +565,9 @@ The operative content is carried into context by the skills, each of which resta
 </p>
 
 <a name="plate-06" id="plate-06"></a>
+
+## Plate 06 — Colophon
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-06.svg">

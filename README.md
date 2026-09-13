@@ -19,6 +19,13 @@ With Love, Math is a decisioning framework packaged as an [Agent Plugins 1.0.0](
 
 The name carries a comma the repository does not — the repo is `With-Love-Math`, the framework is *With Love, Math* (the sign-off, the breath, the point). This is the third pillar in the same body of work as Gregorian Mode and Editorial Loop. Where Gregorian Mode interrogates design choices and Editorial Loop interrogates text, this plugin interrogates decisions — any decision. It is the broadest of the three, and in some ways the most personal.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/pillars.svg">
+    <img src=".github/assets/pillars-light.svg" alt="One body of work, three pillars: Gregorian Mode interrogates design choices; Editorial Loop interrogates text; With Love, Math interrogates decisions — the broadest and most personal." width="100%">
+  </picture>
+</p>
+
 The plugin *is* the framework. It applies its own principles to itself: R1 by always returning to Why, R2 by checking every decision against the invariant, R3 by keeping each principle distinct yet unified, R4 by working at any scale — one decision or a whole project.
 
 > [!IMPORTANT]
@@ -31,7 +38,9 @@ The plugin *is* the framework. It applies its own principles to itself: R1 by al
   </picture>
 </p>
 
-## ▶️ Watch the showcase (1 min)
+## <img src=".github/assets/icons/showcase.svg" width="30" alt="" align="center"> Watch the showcase (1 min)
+
+<a name="showcase" id="showcase"></a>
 
 https://github.com/user-attachments/assets/95a86047-7f20-4f94-b625-53c041392bc1
 
@@ -39,23 +48,32 @@ https://github.com/user-attachments/assets/95a86047-7f20-4f94-b625-53c041392bc1
 
 ## Table of Contents
 
-- [▶️ Watch the showcase (1 min)](#️-watch-the-showcase-1-min)
-- [📜 Background](#-background)
-- [📦 Install](#-install)
+<p align="center">
+
+| | | |
+|---|---|---|
+| <img src=".github/assets/icons/showcase.svg" width="20" alt=""> &nbsp;[**Watch the showcase**](#showcase) · *1 min* | <img src=".github/assets/icons/background.svg" width="20" alt=""> &nbsp;[**Background**](#background) | <img src=".github/assets/icons/install.svg" width="20" alt=""> &nbsp;[**Install**](#install) |
+| <img src=".github/assets/icons/usage.svg" width="20" alt=""> &nbsp;[**Usage**](#usage) — commands · example · output | <img src=".github/assets/icons/framework.svg" width="20" alt=""> &nbsp;[**The Framework**](#framework) — principles · loop · map · layers · WONDER | <img src=".github/assets/icons/architecture.svg" width="20" alt=""> &nbsp;[**Architecture**](#architecture) — packaging · skills · subagents · hooks |
+
+</p>
+
+- [Watch the showcase (1 min)](#showcase)
+- [Background](#background)
+- [Install](#install)
   - [Dependencies](#dependencies)
   - [What loads where](#what-loads-where)
   - [Per-agent instructions](#per-agent-instructions)
-- [🧭 Usage](#-usage)
+- [Usage](#usage)
   - [Commands](#commands)
   - [Example](#example)
   - [Output format](#output-format)
-- [🔬 The Framework](#-the-framework)
+- [The Framework](#framework)
   - [The four principles (R1–R4)](#the-four-principles-r1r4)
   - [The decisioning loop](#the-decisioning-loop)
   - [The ten-position map](#the-ten-position-map)
   - [The four layers](#the-four-layers)
-  - [The invariant: WONDER](#-the-invariant-wonder)
-- [🏛️ Architecture](#️-architecture)
+  - [The invariant: WONDER](#the-invariant-wonder)
+- [Architecture](#architecture)
   - [Portability — the packaging split](#portability--the-packaging-split)
   - [Commands — the public entry points](#commands--the-public-entry-points)
   - [Skills — the operative content](#skills--the-operative-content)
@@ -66,7 +84,9 @@ https://github.com/user-attachments/assets/95a86047-7f20-4f94-b625-53c041392bc1
 - [Contributing](#contributing)
 - [License](#license)
 
-## 📜 Background
+## <img src=".github/assets/icons/background.svg" width="30" alt="" align="center"> Background
+
+<a name="background" id="background"></a>
 
 Most work starts with a reason and a feeling, and then loses both. Iterations accumulate, constraints arrive, other people's opinions land on top, and by the end the decision no longer resembles the one you set out to make. With Love, Math is a framework for not losing them: R1 traces every choice back to its origin; R2 names the feeling before you start and holds it constant through every change.
 
@@ -76,7 +96,9 @@ Most work starts with a reason and a feeling, and then loses both. Iterations ac
 
 Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — warm enough to invite, strange enough to be memorable, confident enough to commit, refined enough to trust.
 
-## 📦 Install
+## <img src=".github/assets/icons/install.svg" width="30" alt="" align="center"> Install
+
+<a name="install" id="install"></a>
 
 No build step, no package manager, no runtime dependencies — the plugin is plain markdown that a compatible agent discovers on load. Clone once; every install path below starts from that clone or reads the repository directly.
 
@@ -238,11 +260,20 @@ cp -r With-Love-Math/skills/* ~/.your-agent/skills/
 
 </details>
 
-## 🧭 Usage
+## <img src=".github/assets/icons/usage.svg" width="30" alt="" align="center"> Usage
+
+<a name="usage" id="usage"></a>
 
 Once the plugin is loaded, the session-start hook greets you and lists the commands — in agents that ship the hook. Five commands, stable and minimal; each dispatches to a skill or subagent beneath it. In agents that do not register slash commands, invoke the same procedures in words — "Run the decision engine on `<decision>`" reaches the identical skill.
 
 ### Commands
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/commands.svg">
+    <img src=".github/assets/commands-light.svg" alt="Five commands: /decide — run a decision through the full framework → Aligned / Needs Revision verdict; /diagnose — audit an existing project against R1–R4 → prescription with first step; /map — map a project onto the ten-position map → filled table plus gaps; /teach — teach the framework, adapted to the learner; /lexicon — define the framework's terms." width="100%">
+  </picture>
+</p>
 
 | Command       | Does                                                              |
 | ------------- | ----------------------------------------------------------------- |
@@ -290,7 +321,9 @@ VERDICT: Aligned  |  Needs Revision
 
 The verdict is binary at the top level; failures are named by principle, and the framework never softens a Fail into a Weak to reach Aligned. If you want a verdict instead of a discussion, this is the point.
 
-## 🔬 The Framework
+## <img src=".github/assets/icons/framework.svg" width="30" alt="" align="center"> The Framework
+
+<a name="framework" id="framework"></a>
 
 The framework is the content; the plugin is its encoding. It has five components — four principles, one loop, one map, four layers, one invariant.
 
@@ -376,14 +409,16 @@ Position 10 — **Find the Math** — is the terminal move: name the pattern, ra
 
 ### The four layers
 
-1. **Design Philosophy** — physical, practical
-2. **Self-Help / Self-Love** — emotional, psychological
-3. **Math in Nature** — intellectual, structural
-4. **Esotericism** — spiritual, transcendent
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/layers.svg">
+    <img src=".github/assets/layers-light.svg" alt="The four layers: I Design Philosophy — physical, practical; II Self-Help / Self-Love — emotional, psychological; III Math in Nature — intellectual, structural; IV Esotericism — spiritual, transcendent." width="100%">
+  </picture>
+</p>
 
 Any element can be read at any layer; a good decision holds at all four. (See [Background](#-background).)
 
-### 💫 The invariant: WONDER
+### <img src=".github/assets/icons/wonder.svg" width="26" alt="" align="center"> The invariant: WONDER
 
 > [!TIP]
 > **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what R2 preserves and R4 scales — the single test the whole framework resolves to.
@@ -395,7 +430,9 @@ Any element can be read at any layer; a good decision holds at all four. (See [B
   </picture>
 </p>
 
-## 🏛️ Architecture
+## <img src=".github/assets/icons/architecture.svg" width="30" alt="" align="center"> Architecture
+
+<a name="architecture" id="architecture"></a>
 
 The plugin has four layers, and each does a distinct job — plus a packaging split that keeps it portable. This is also a plugin-authoring reference: it is a complete worked example of an Agent Plugins 1.0.0 package with client namespaces cooperating in one repository.
 

@@ -10,7 +10,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-c9a227?style=flat-square&labelColor=0d0d10)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-c9a227?style=flat-square&labelColor=0d0d10)](plugin.json)
 [![Agent Plugins](https://img.shields.io/badge/Agent_Plugins-1.0.0-c9a227?style=flat-square&labelColor=0d0d10)](https://agent-plugins.org/specification)
-[![Standard Readme](https://img.shields.io/badge/standard--readme-follower-c9a227?style=flat-square&labelColor=0d0d10)](https://github.com/richardlitt/standard-readme)
 [![math-approved](https://img.shields.io/badge/math--approved-WONDER_preserved-f0d878?style=flat-square&labelColor=0d0d10)](#the-invariant-wonder)
 
 An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that turns deliberation into a verdict. It is a folder of written instructions an agent reads when it starts. Nothing to compile, nothing to run. Hand it a decision, or a project already underway, and it runs the whole thing through one fixed set of questions: four principles, one loop, one invariant — the one thing that must not change. What comes back is a verdict, **Aligned** or **Needs Revision**, and when the answer is Needs Revision it names exactly which principle failed and the single first move to fix it.
@@ -22,12 +21,9 @@ An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that tu
   </picture>
 </p>
 
-The plugin *is* the framework. It applies its own principles to itself: **R1 · Recursive Grounding** by always returning to Why, **R2 · Emotion as Invariant** by checking every decision against the invariant, **R3 · Distinction Within Unity** by keeping each principle distinct yet unified, and **R4 · Scale the Invariance** by working at any scale — one decision or a whole project.
 
 > [!IMPORTANT]
-> **It is not a cover generator, not a website builder, and not a chat partner for endless deliberation.** Those three all produce something — a cover, a site, more conversation. This one produces a judgement. It is a discipline for running a decision and getting a verdict: a binary **Aligned / Needs Revision** that names any failing principle.
-
-**How to read this page.** The README is built as seven numbered plates on one continuous ground. A plate is one page in a bound book — self-contained, and printed on a ground that runs behind all seven. Every plate carries a ribbon icon, every chapter is numbered, and the invariant — **WONDER** — recurs as a visual anchor. Land anywhere: the plate number and icon tell you where you are, and [the verdict table](#the-verdict-table) is never more than one click away in the [contents](#contents).
+> **It is not a cover generator, not a website builder, and not a chat partner for endless deliberation.** Those three all produce something — a cover, a site, more conversation. This one produces a judgement. It is a discipline for running a decision and getting a verdict: an **Aligned / Needs Revision** verdict that names any failing principle.
 
 <p align="center">
   <picture>
@@ -38,7 +34,7 @@ The plugin *is* the framework. It applies its own principles to itself: **R1 · 
 
 <a name="plate-00" id="plate-00"></a>
 
-## Plate 00 — Watch the Showcase
+## 00 — Watch the Showcase
 
 <p align="center">
   <picture>
@@ -47,36 +43,19 @@ The plugin *is* the framework. It applies its own principles to itself: **R1 · 
   </picture>
 </p>
 
-https://github.com/user-attachments/assets/85ad0725-a5d8-4eb8-9937-c1517d581007
-
-*The 87-second showcase — the four principles, the loop, and the invariant in motion. Direct download: <a href="https://github.com/AlastairZeved/With-Love-Math/releases/download/showcase/with-love-math-showcase.mp4">MP4 (20.5 MB)</a>, from the downloads shelf GitHub keeps beside every project.*
-
 ## Contents
 
 <a name="contents" id="contents"></a>
 
 | | | |
 |---|---|---|
-| [**Plate 00 — Watch the showcase**](#plate-00) · *1½ min* | [**Plate 01 — Background**](#plate-01) | [**Plate 02 — Install**](#plate-02) |
-| [**Plate 03 — Usage**](#plate-03) — commands · example · output | [**Plate 04 — The Framework**](#plate-04) — principles · loop · map · layers · WONDER | [**Plate 05 — Architecture**](#plate-05) — packaging · skills · subagents · hooks |
-| [**Plate 06 — Colophon**](#plate-06) — maintainers · contributing · license | | |
-
-<a name="the-verdict-table" id="the-verdict-table"></a>
-
-### The verdict table
-
-The framework answers with one of two words. Every run — whether you asked it to decide, to audit, or to map — resolves to the same pair:
-
-| Verdict | Mark | Meaning | Named by |
-|---|---|---|---|
-| **Aligned** <img src=".github/assets/icons/verdict-aligned.svg" width="26" alt="" align="center"> | | The decision holds: the loop was run, the principles pass, the invariant is preserved. | — |
-| **Needs Revision** <img src=".github/assets/icons/verdict-revision.svg" width="26" alt="" align="center"> | | The decision does not yet hold — and the framework names the failing principle(s) and the single first move. | R1 / R2 / R3 / R4 by name |
-
-Each principle is graded on its own, as Pass, Weak, or Fail, but the verdict on top stays binary. It is never softened: a Fail is never rounded up to a Weak to reach Aligned. The [output format](#output-format) shows the exact shape.
+| [**00 — Watch the showcase**](#plate-00) · *1½ min* | [**01 — Background**](#plate-01) | [**Plate 02 — Install**](#plate-02) |
+| [**3 — Usage**](#plate-03) — commands · example · output | [**04 — The Framework**](#plate-04) — principles · loop · map · layers · WONDER | [**05 — Architecture**](#plate-05) — packaging · skills · subagents · hooks |
+| [**06 — Colophon**](#plate-06) — maintainers · contributing · license | | |
 
 <a name="plate-01" id="plate-01"></a>
 
-## Plate 01 — Background
+## 01 — Background
 
 <p align="center">
   <picture>
@@ -85,8 +64,6 @@ Each principle is graded on its own, as Pass, Weak, or Fail, but the verdict on 
   </picture>
 </p>
 
-Most work starts with a reason and a feeling, and then loses both. Iterations accumulate, constraints arrive, other people's opinions land on top, and by the end the decision no longer resembles the one you set out to make.
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/art-drift.svg">
@@ -94,21 +71,11 @@ Most work starts with a reason and a feeling, and then loses both. Iterations ac
   </picture>
 </p>
 
-With Love, Math is a framework for not losing them: **R1 · Recursive Grounding** traces every choice back to where it started; **R2 · Emotion as Invariant** names the feeling before you begin and holds it steady through every change.
-
-**Gregorian** is the author's word for *a standard strangers adopt and never stop running* — coined in Gregorian Mode, the sibling project about design choices, and carried over into this one. It survives in `gregorian-decision`, the name of the subagent that runs the whole framework in one pass. A subagent, for anyone meeting the word for the first time, is a smaller second agent that the main one hands one narrow job to. Three such subagents ship with this plugin, and they are introduced in Plate 05.
-
-Here the standard is a four-principle decisioning framework whose single invariant is WONDER. The framework is meant to be passed on, not only used privately — the `/teach` command and the `tutor` skill exist precisely so others can adopt it and run it.
-
-| The claim | What it means here |
-|---|---|
-| **Four depths, one object** | Every element of the framework reads at four depths simultaneously — Design Philosophy (physical), Self-Help / Self-Love (emotional), Math in Nature (structural), Esotericism (spiritual). A good decision holds at all four. This is the framework's most unusual claim: a layout decision, a life decision, a structural pattern, and a spiritual question are the same object viewed from different altitudes. |
-
-Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — warm enough to invite, strange enough to be memorable, confident enough to commit, refined enough to trust.
+With Love, Math is a framework for not losing the feeling or the reason mid-build: **R1 · Recursive Grounding** traces every choice back to where it started; **R2 · Emotion as Invariant** names the feeling before you begin and holds it steady through every change.
 
 <a name="plate-02" id="plate-02"></a>
 
-## Plate 02 — Install
+## 02 — Install
 
 <p align="center">
   <picture>
@@ -117,38 +84,15 @@ Its brand personality is **Friendly · Quirky · Bold · Sophisticated** — war
   </picture>
 </p>
 
-No build step, no package manager, no runtime dependencies — nothing to compile and nothing to keep updated. The plugin is plain markdown: a folder of text files that a compatible agent reads when it loads. That is the whole mechanism, and it is why most install routes below come down to the same move: put this folder where your agent already looks — or name the repository and let the command fetch it. Clone once; every route starts from that clone or reads the repository directly.
+No build step, no package manager, no runtime dependencies — nothing to compile and nothing to keep updated, all markdown.
 
 ```bash
 git clone https://github.com/AlastairZeved/With-Love-Math.git
 ```
 
-The root [`plugin.json`](plugin.json) is the [Agent Plugins 1.0.0](https://agent-plugins.org/specification) manifest — one small file at the top of the folder that tells any agent what is inside before it reads anything else. Because that file follows a published standard, every client that speaks it reads this plugin unchanged — that is what *portable* means here. Where clients differ, their extra pieces sit in a namespace of their own, a folder named for one client only, and every other client ignores it. Nothing portable depends on anything namespaced, which is what keeps the package portable.
-
-### Dependencies
-
-> [!NOTE]
-> None. Markdown only. (Git, to clone the repository.)
-
-### What loads where
-
-| Agent | Install route | Skills | Commands | Subagents | Hooks |
-|---|---|---|---|---|---|
-| **Claude Code** | [`claude --plugin-dir`](#claude-code) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 5 | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 3 | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 2 |
-| **Hermes Agent** | [`hermes plugins install`](#hermes-agent) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 4 | via skills | — | — |
-| **Codex** (CLI / ChatGPT app) | [`/plugins` browser + marketplace](#codex) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> | — | — | — |
-| **Cursor** | [Customize page or `~/.cursor/plugins/local`](#cursor) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported">\* | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported">\* | — |
-| **GitHub Copilot** | [`copilot plugin install` / VS Code](#github-copilot) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 5 | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 3 | — |
-| **Pi Agent** | [clone into `~/.pi/agent/skills/`](#pi-agent) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> 4 | — | — | — |
-| **Any SKILL.md agent** | [copy a `skills/` folder](#any-skillmd-agent) | <img src=".github/assets/icons/verdict-aligned.svg" width="18" alt="supported"> | — | — | — |
-
-\* Cursor reads the Claude-namespace `commands/` and `agents/` through its [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) manifest where a Claude-style command or agent is understood.
-
-In agents that register no slash-command menu, the same procedures are reachable in words — "Run the decision engine on `<decision>`" reaches the identical skill that `/decide` does. The commands are doors, not the house.
-
 ### Per-agent instructions
 
-Seven routes into the same repository — the install section is a hallway of doors, each card its own room:
+Seven routes into the same repository:
 
 <p align="center">
   <picture>
@@ -298,7 +242,7 @@ cp -r With-Love-Math/skills/* ~/.your-agent/skills/
 
 <a name="plate-03" id="plate-03"></a>
 
-## Plate 03 — Usage
+## 03 — Usage
 
 <p align="center">
   <picture>
@@ -362,11 +306,9 @@ VERDICT: Aligned  |  Needs Revision
   <if Needs Revision: name the failing principle(s) and the single first move>
 ```
 
-The verdict is binary; failures are named by principle, and the framework never softens a Fail into a Weak to reach Aligned. If you want a verdict instead of a discussion, this is the point.
-
 <a name="plate-04" id="plate-04"></a>
 
-## Plate 04 — The Framework
+## 04 — The Framework
 
 <p align="center">
   <picture>
@@ -374,8 +316,6 @@ The verdict is binary; failures are named by principle, and the framework never 
     <img src=".github/assets/plate-04-light.svg" alt="Plate 04 — The Framework. Four principles, one loop, one map, four layers, one invariant." width="100%">
   </picture>
 </p>
-
-The framework is the content; the plugin is how that content is packaged and shipped. It has five parts — four principles, one loop, one map, four layers, one invariant.
 
 ### The four principles (R1–R4)
 
@@ -412,11 +352,7 @@ The framework is the content; the plugin is how that content is packaged and shi
 - **FEEL** — the feeling that must be preserved
 - **EVOKE** — how you produce that feeling in the person who receives it
 
-The loop is infinite; it always returns to the beginning. This is R1 in motion — no decision is ever fully grounded, only grounded again each time you run the loop. Grounding, throughout this framework, means tracing a thing back to the reason it exists.
-
 ### The ten-position map
-
-A second lens on the same structure. The loop is the sequence you run; the map is the shape it makes.
 
 <p align="center">
   <picture>
@@ -443,7 +379,7 @@ A second lens on the same structure. The loop is the sequence you run; the map i
 
 </details>
 
-Position 10 — **Find the Math** — is where the map ends: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. Most decision frameworks stop before this point. The claim here is that good decisions have an underlying form, and that naming it makes them easier to see and easier to hand on.
+Position 10 — **Find the Math** — is where the map ends: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. Most decision frameworks stop before this point. The claim here is that good decisions have an underlying form, and that naming it makes them easier to see and easier to fix.
 
 ### The four layers
 
@@ -453,8 +389,6 @@ Position 10 — **Find the Math** — is where the map ends: name the pattern, r
     <img src=".github/assets/art-layers-light.svg" alt="The four layers: Design Philosophy, Self-Help and Self-Love, Math in Nature, Esotericism." width="100%">
   </picture>
 </p>
-
-Any element can be read at any layer, and a good decision holds at all four — **Design Philosophy** (the physical object), **Self-Help / Self-Love** (the emotional life of it), **Math in Nature** (the structural pattern underneath), and **Esotericism** (the spiritual reading: what it means beyond what it does). The four are read together in [Background](#plate-01).
 
 ### The invariant: WONDER
 
@@ -468,7 +402,7 @@ Any element can be read at any layer, and a good decision holds at all four — 
 > [!TIP]
 > **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what **R2 · Emotion as Invariant** preserves and **R4 · Scale the Invariance** scales — the single test the whole framework resolves to.
 
-The invariant is the page's visual anchor: it appears as the closing mark of the [banner](#), returns as the anchor of Plate 06 below, and is the mark every verdict resolves against (see [the verdict table](#the-verdict-table)).
+The invariant is the page's visual anchor: it appears as the closing mark of the [banner](#), returns as the anchor of 06 below, and is the mark every verdict resolves against.
 
 <p align="center">
   <picture>
@@ -479,7 +413,7 @@ The invariant is the page's visual anchor: it appears as the closing mark of the
 
 <a name="plate-05" id="plate-05"></a>
 
-## Plate 05 — Architecture
+## 05 — Architecture
 
 <p align="center">
   <picture>
@@ -488,25 +422,7 @@ The invariant is the page's visual anchor: it appears as the closing mark of the
   </picture>
 </p>
 
-The plugin has four layers, and each does a distinct job — plus a packaging split that keeps it portable. This is also a plugin-authoring reference: it is a complete worked example of an Agent Plugins 1.0.0 package with client namespaces cooperating in one repository.
-
-### Portability — the packaging split
-
-Two kinds of content live side by side, per the Agent Plugins 1.0.0 standard (§8, client extensions):
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/art-architecture.svg">
-    <img src=".github/assets/art-architecture-light.svg" alt="The packaging split: portable content and client-namespaced content, side by side." width="100%">
-  </picture>
-</p>
-
-- **Portable** — [`skills/`](skills) and the root [`plugin.json`](plugin.json). Every Agent Plugins 1.0.0 client reads these; they reference nothing client-specific.
-- **Client-namespaced** — [`com.anthropic.claude/`](com.anthropic.claude) (commands, subagents, hooks, hook scripts) and [`com.github.copilot/`](com.github.copilot) (the same components in Copilot's documented formats, with a [porting note](com.github.copilot/README.md)). Clients that don't implement a namespace ignore it, which is what keeps the package portable.
-
-  Claude Code's manifest at [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) declares the namespace paths for its commands, agents, and hooks.
-
-Per-agent adapters live in [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) (Codex compatibility fallback) and [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (Cursor manifest pointing at the portable skills and the Claude-namespace commands and agents).
+The plugin has four layers, and each does a distinct job — plus a packaging split that keeps it portable.
 
 ### Commands — the public entry points
 
@@ -522,8 +438,6 @@ Four skills in [`skills/`](skills), each a `SKILL.md` carrying the compact canon
 | `diagnostic`       | The audit process: where an existing work loses the invariant (backs `/diagnose`) |
 | `tutor`            | The canon plus a teaching structure and level-adaptation rules (backs `/teach`) |
 | `lexicon`          | The canon plus the full glossary (backs `/lexicon`)                   |
-
-Every skill carries the invariant.
 
 ### Subagents — the specialists
 
@@ -550,25 +464,7 @@ The hook commands reference `${CLAUDE_PLUGIN_ROOT}` — the plugin root — so t
 
 Hooks are Claude-namespace components; agents without a hook mechanism simply run without them.
 
-### Canon and synchronization
-
-> [!WARNING]
-> **Edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.**
-
-[`CLAUDE.md`](CLAUDE.md) at the plugin root is the human-readable single source of truth for the framework — and, as the file states explicitly, it is *not* auto-loaded into the host agent's context.
-
-The operative content is carried into context by the skills, each of which restates only the compact canon it needs. This is a deliberate synchronization burden accepted in exchange for skills that work standalone.
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/divider.svg">
-    <img src=".github/assets/divider-light.svg" alt="" width="700">
-  </picture>
-</p>
-
-<a name="plate-06" id="plate-06"></a>
-
-## Plate 06 — Colophon
+## 06 — Colophon
 
 <p align="center">
   <picture>
@@ -597,18 +493,6 @@ Per-agent adapters live in [`.codex-plugin/plugin.json`](.codex-plugin/plugin.js
 
 [MIT](LICENSE) © AlastairZeved
 
-## Design notes
-
-This page is one continuous object: seven numbered plates on a single ground, the invariant as the recurring anchor.
-
-- **The ground.** One seamless motif carries the whole page — warm graph paper (a 24-unit minor grid, a 120-unit major grid, a punch-holed margin rule) over a faint field of EB Garamond italics: ampersands and the digits of the ten positions. "Love letter meets mathematics" as a texture, not a decoration. The motif is defined once per theme in `.github/assets/textures/` (`ground-dark.svg`, `ground-light.svg`) and inherited by every chapter plate and diagram; it extends the banner's Deep Surfaces aesthetic (near-black field, faint glyph field, gold rules) down the page instead of restarting the design at section one.
-- **Chapter system.** Seven plates, numbered 00–06, all on the one continuous ground — no section restarts the design. Each plate: a ghost chapter numeral, a `PLATE` label with rule, a serif display title in EB Garamond, an italic keyline restating the chapter's thesis, and a ribbon icon at the right edge, so a mid-page reader re-orients from the plate number and icon alone.
-- **The icon family.** One system: 48-unit grid, 2.4-unit stroke, round caps and joins, gold on near-black. Every visual cue on the page comes from it — the inventory with the design rules lives in [docs/icons.md](docs/icons.md).
-- **Diagrams, not prose.** The WHY→WHO→FEEL→EVOKE loop is a cycle diagram (`art-loop`), the ten positions are a two-axis map (`art-map`), R1–R4 are four parallel callouts (`art-pillars`), the drift of a decision from its origin is drawn (`art-drift`), and the install routes are a hallway of doors (`art-doors`). Tables remain as accessible fallbacks inside collapsible sections.
-- **The spatial test.** Each plate is a room: the showcase is a screening room, the install section a hallway of doors, the framework a gallery with the four principles as framed callouts, the map a two-axis chart, the WONDER plate a lantern-lit inner chamber at the center of the house, and the colophon the door left open behind you. The question — *would this exist in a physical version of this space?* — was applied to every section; anything that could not be answered with a spatial object was reworked into one.
-- **Constraints.** Static SVG/CSS only; zero new runtime dependencies; presentation restyle only — meaning is frozen.
-
-<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/divider.svg">
     <img src=".github/assets/divider-light.svg" alt="" width="700">

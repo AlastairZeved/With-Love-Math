@@ -359,15 +359,6 @@ VERDICT: Aligned  |  Needs Revision
 
 Position 10 — **Find the Math** — is where the map ends: name the pattern, ratio, symmetry, or structure underneath the decision. If none exists, that absence is itself a finding. Most decision frameworks stop before this point. The claim here is that good decisions have an underlying form, and that naming it makes them easier to see and easier to fix.
 
-### The four layers
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/art-layers.svg">
-    <img src=".github/assets/art-layers-light.svg" alt="The four layers: Design Philosophy, Self-Help and Self-Love, Math in Nature, Esotericism." width="100%">
-  </picture>
-</p>
-
 ### The invariant: WONDER
 
 <p align="center">
@@ -379,8 +370,6 @@ Position 10 — **Find the Math** — is where the map ends: name the pattern, r
 
 > [!TIP]
 > **WONDER.** If a decision, design, or project does not evoke wonder, it has not passed. This is what **R2 · Emotion as Invariant** preserves and **R4 · Scale the Invariance** scales — the single test the whole framework resolves to.
-
-The invariant is the page's visual anchor: it appears as the closing mark of the [banner](#), returns as the anchor of 06 below, and is the mark every verdict resolves against.
 
 <p align="center">
   <picture>
@@ -402,13 +391,13 @@ The invariant is the page's visual anchor: it appears as the closing mark of the
 
 The plugin has four layers, and each does a distinct job — plus a packaging split that keeps it portable.
 
-### Commands — the public entry points
+### Commands
 
-Five flat command files in [`com.anthropic.claude/commands/`](com.anthropic.claude/commands) — `decide.md`, `diagnose.md`, `map.md`, `teach.md`, `lexicon.md`. Commands are thin: an argument hint, a one-line description, and dispatch instructions. Depth lives below them. Copilot users get the same five doors as command wrappers under [`com.github.copilot/commands/`](com.github.copilot/commands).
+Five flat command files in [`com.anthropic.claude/commands/`](com.anthropic.claude/commands) — `decide.md`, `diagnose.md`, `map.md`, `teach.md`, `lexicon.md`.Copilot users get the same five doors as command wrappers under [`com.github.copilot/commands/`](com.github.copilot/commands).
 
-### Skills — the operative content
+### Skills
 
-Four skills in [`skills/`](skills), each a `SKILL.md` carrying the compact canon it needs:
+Four skills in [`skills/`](skills), each a `SKILL.md`:
 
 | Skill              | Carries                                                              |
 | ------------------ | -------------------------------------------------------------------- |
@@ -417,9 +406,9 @@ Four skills in [`skills/`](skills), each a `SKILL.md` carrying the compact canon
 | `tutor`            | The canon plus a teaching structure and level-adaptation rules (backs `/teach`) |
 | `lexicon`          | The canon plus the full glossary (backs `/lexicon`)                   |
 
-### Subagents — the specialists
+### Subagents
 
-Three subagents in [`com.anthropic.claude/agents/`](com.anthropic.claude/agents), all `model: sonnet`, all with `disallowedTools: Write, Edit` — they evaluate, they do not modify.
+Three subagents in [`com.anthropic.claude/agents/`](com.anthropic.claude/agents), all with `disallowedTools: Write, Edit` — they evaluate, they do not modify.
 
 | Agent                  | Job                                            | Effort | Turns |
 | ---------------------- | ---------------------------------------------- | ------ | ----- |
@@ -429,9 +418,9 @@ Three subagents in [`com.anthropic.claude/agents/`](com.anthropic.claude/agents)
 
 The division of labor is clean: `gregorian-decision` is the full operation, `invariant-checker` is the scalpel, `ten-position-mapper` does the cartography.
 
-Copilot users get the same three specialists as `.agent.md` custom agents under [`com.github.copilot/agents/`](com.github.copilot/agents); the no-write guardrail travels in the prompt body there, since `.agent.md` frontmatter does not carry `disallowedTools`.
+Copilot users get the same three as `.agent.md` custom agents under [`com.github.copilot/agents/`](com.github.copilot/agents); the no-write guardrail travels in the prompt body there, since `.agent.md` frontmatter does not carry `disallowedTools`.
 
-### Hooks — the ambient reminders
+### Hooks
 
 Two hooks in [`com.anthropic.claude/hooks/hooks.json`](com.anthropic.claude/hooks/hooks.json), both non-blocking:
 
@@ -458,14 +447,6 @@ Hooks are Claude-namespace components; agents without a hook mechanism simply ru
 ### Contributing
 
 Questions and framework discussion: [open an issue](https://github.com/AlastairZeved/With-Love-Math/issues). Pull requests are welcome for corrections and for keeping the several copies in sync; proposals that change the framework itself should be opened as issues first, since the framework is the content of the plugin.
-
-| The one non-negotiable | The reason |
-|---|---|
-| **Edit the canon in [CLAUDE.md](CLAUDE.md) first, then reconcile every skill in [`skills/`](skills) against it.** | The skills each carry their own copy of the canon by design; a change that updates one copy but not the others breaks the synchronization rule the plugin runs on. Subagents under [`com.anthropic.claude/agents/`](com.anthropic.claude/agents) must keep `Write` and `Edit` disallowed — they evaluate, they do not modify. |
-
-When you add a piece that only one client understands, put it in that client's own namespace (`com.anthropic.claude/` for Claude Code, `com.github.copilot/` for Copilot), declare it in that client's manifest where the client supports it, and keep the portable `skills/` directory free of anything client-specific.
-
-Per-agent adapters live in [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) (Codex compatibility fallback) and [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) (Cursor) — update them whenever the portable files they point at change.
 
 ### License
 

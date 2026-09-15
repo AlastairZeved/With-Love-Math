@@ -64,35 +64,13 @@ An [Agent Plugins 1.0.0](https://agent-plugins.org/specification) plugin that tu
   </picture>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/art-drift.svg">
-    <img src=".github/assets/art-drift-light.svg" alt="A decision drifts from its origin; R1 traces it back and R2 holds the feeling constant." width="100%">
-  </picture>
-</p>
-
-With Love, Math is a framework for not losing the feeling or the reason mid-build: **R1 · Recursive Grounding** traces every choice back to where it started; **R2 · Emotion as Invariant** names the feeling before you begin and holds it steady through every change.
+With Love, Math is a framework for not losing the feeling or the reason mid-build. Put simply, it's a framework for maintaining intention when designing with an agent. If you're looking for something to vibe code harder, look elsewhere. **R1 · Recursive Grounding** traces every choice back to where it started; **R2 · Emotion as Invariant** names the feeling before you begin and holds it steady through every change.
 
 <a name="plate-02" id="plate-02"></a>
 
 ## 02 — Install
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plate-02.svg">
-    <img src=".github/assets/plate-02-light.svg" alt="Plate 02 — Install. No build step, no package manager, no runtime dependencies." width="100%">
-  </picture>
-</p>
-
-No build step, no package manager, no runtime dependencies — nothing to compile and nothing to keep updated, all markdown.
-
-```bash
-git clone https://github.com/AlastairZeved/With-Love-Math.git
-```
-
 ### Per-agent instructions
-
-Seven routes into the same repository:
 
 <p align="center">
   <picture>
@@ -327,7 +305,7 @@ VERDICT: Aligned  |  Needs Revision
 </p>
 
 <details open>
-<summary><strong>As a table</strong> (screen-reader / copy-friendly)</summary>
+<summary><strong>As a table</strong></summary>
 
 | Principle                     | Question                             | What it enforces                                    |
 | ----------------------------- | ------------------------------------ | --------------------------------------------------- |

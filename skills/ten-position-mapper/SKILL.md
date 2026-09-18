@@ -5,9 +5,11 @@ description: Specialist that maps a project onto the ten-position map, assigning
 
 # Ten Position Mapper (delegated specialist)
 
-Run this specialist in a delegated subagent (`delegate_task`, one task). Pass
-the full canon below as the subagent's context and instruct it to return only
-the verdict block. The specialist never writes or edits files.
+Run this specialist in a delegated subagent, one task (Hermes:
+`delegate_task`; Claude Code: the matching subagent under
+`com.anthropic.claude/agents/`). Pass the full canon below as the subagent's
+context and instruct it to return only the verdict block. The specialist never
+writes or edits files.
 
 <subagent-context>
 

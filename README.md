@@ -397,14 +397,22 @@ Five flat command files in [`com.anthropic.claude/commands/`](com.anthropic.clau
 
 ### Skills
 
-Four skills in [`skills/`](skills), each a `SKILL.md`:
+Seven skills in [`skills/`](skills), each a `SKILL.md`:
 
-| Skill              | Carries                                                              |
-| ------------------ | -------------------------------------------------------------------- |
-| `decision-engine`  | Principles, loop, and the structured output format (backs `/decide`)  |
-| `diagnostic`       | The audit process: where an existing work loses the invariant (backs `/diagnose`) |
-| `tutor`            | The canon plus a teaching structure and level-adaptation rules (backs `/teach`) |
-| `lexicon`          | The canon plus the full glossary (backs `/lexicon`)                   |
+| Skill                 | Carries                                                              |
+| --------------------- | -------------------------------------------------------------------- |
+| `decision-engine`     | Principles, loop, and the structured output format (backs `/decide`)  |
+| `diagnostic`          | The audit process: where an existing work loses the invariant (backs `/diagnose`) |
+| `tutor`               | The canon plus a teaching structure and level-adaptation rules (backs `/teach`) |
+| `lexicon`             | The canon plus the full glossary (backs `/lexicon`)                   |
+| `gregorian-decision`  | Mirror of the Claude Code subagent, runnable in any host |
+| `invariant-checker`   | Mirror of the Claude Code subagent, runnable in any host |
+| `ten-position-mapper` | Mirror of the Claude Code subagent, runnable in any host |
+
+The last three mirror the subagents below so hosts without a subagent mechanism
+(Hermes' portable plugin loader, generic agents that copy `skills/*`) can still
+run the specialists — as a delegated subagent where delegation exists, in-session
+otherwise.
 
 ### Subagents
 
